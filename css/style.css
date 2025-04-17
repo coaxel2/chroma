@@ -21,9 +21,9 @@
   --accent-color: #00ff00; /* Exemple : vert fluo */
   --text-color: #ffffff;
   --light-color: #f0f0f0;
-  --dark-color: #101010;
+  --dark-color: #1b1b1b;
   --darker-color: #000000;
-  --grey-color: #444;
+  --grey-color: #292929;
   --light-grey: #555;
   --card-bg: #2a2a2a;
   --secondary-hover: #272741;
@@ -133,7 +133,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 20px 5%;
-  background-color: rgba(18, 18, 18, 0.95);
+  background-color: var(--dark-color);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   position: sticky;
   top: 0;
