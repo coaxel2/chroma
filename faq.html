@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ - Chroma</title>
+  <link href="css/style.css" rel="stylesheet" type="text/css" />
+  <link rel="icon" type="image/png" sizes="128x128" href="img/simple2.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="dark-theme">
+  <header>
+    <div class="logo">
+      <a href="index.html">
+        <img src="img/simple.png" alt="Logo Chroma">
+      </a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="actualites.html">Actualités</a></li>
+        <li><a href="evenements.html">Événements</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="compte.html">Compte</a></li>
+      </ul>
+    </nav>
+    <div class="header-buttons">
+    </div>
+    <script>
+      window.addEventListener('scroll', function () {
+        const header = document.querySelector('header');
+        if (window.scrollY > 0) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      });
+    </script>
+  </header>
+
+  <section class="page-header">
+    <h1>FAQ</h1>
+  </section>
+
+  <section class="faq">
+    <h2>Questions fréquentes</h2>
+    <div class="faq-container">
+
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <h3>Comment créer un compte ?</h3>
+        <p>
+          Vous pouvez créer un compte en cliquant sur l'onglet "Inscription" ci-dessus et en remplissant le formulaire
+          avec vos informations.
+        </p>
+        <div class="faq-extended">
+          <p>
+            Suivez ces étapes pour ouvrir votre compte :
+          </p>
+          <ul>
+            <li>Choisissez une adresse email valide et accessible.</li>
+            <li>Créez un mot de passe robuste (8+ caractères, mélange de lettres, chiffres et symboles).</li>
+            <li>Renseignez vos nom, prénom et éventuellement un pseudonyme.</li>
+            <li>Validez le formulaire, puis ouvrez votre boîte mail pour cliquer sur le lien de confirmation.</li>
+          </ul>
+          <p>
+            Une fois validé, votre compte sera immédiatement actif :
+            <strong>Tableau de bord personnalisé</strong>,
+            <strong>offres exclusives</strong>,
+            <strong>suivi de votre activité</strong> et
+            <strong>notifications en temps réel</strong>.
+            Vous pouvez aussi lier votre compte à vos réseaux sociaux pour un accès simplifié.
+          </p>
+        </div>
+        <span class="faq-chevron"><i class="fas fa-chevron-down"></i></span>
+      </div>
+
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <h3>Comment modifier mon profil ?</h3>
+        <p>
+          Une fois connecté, vous pourrez accéder à votre profil et le modifier en cliquant sur votre nom d'utilisateur
+          dans le menu.
+        </p>
+        <div class="faq-extended">
+          <p>
+            Pour personnaliser votre profil :
+          </p>
+          <ul>
+            <li>Changez votre photo (formats JPG/PNG, max 2 Mo).</li>
+            <li>Ajoutez une biographie (jusqu’à 500 caractères).</li>
+            <li>Définissez vos centres d’intérêt et préférences de notification.</li>
+          </ul>
+          <p>
+            Dès la sauvegarde, un message de confirmation s’affiche. En cas d’erreur, une notification vous guide
+            pour corriger les champs manquants ou mal formatés.
+          </p>
+        </div>
+        <span class="faq-chevron"><i class="fas fa-chevron-down"></i></span>
+      </div>
+
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <h3>Comment participer aux tournois avec mon compte ?</h3>
+        <p>
+          La création d'un compte vous permet de vous inscrire facilement aux tournois et de suivre votre progression.
+        </p>
+        <div class="faq-extended">
+          <p>Procédure d’inscription :</p>
+          <ul>
+            <li>Rendez-vous dans « Événements » et sélectionnez le tournoi qui vous intéresse.</li>
+            <li>Cliquez sur « S’inscrire » puis remplissez les informations requises (équipe, niveau, disponibilités).
+            </li>
+            <li>Validez et recevez un email de confirmation avec votre numéro de participant.</li>
+          </ul>
+          <p>Suivi de vos matchs :</p>
+          <ul>
+            <li>Consultez votre tableau de bord pour voir adversaires et horaires.</li>
+            <li>Recevez les résultats en temps réel après chaque rencontre.</li>
+            <li>Accédez aux statistiques détaillées et replays si disponibles.</li>
+          </ul>
+        </div>
+        <span class="faq-chevron"><i class="fas fa-chevron-down"></i></span>
+      </div>
+
+    </div>
+
+    <h2>Où nous trouver</h2>
+    <div class="faq-container">
+
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <h3>Où se situe le Café Chroma ?</h3>
+        <p>
+          Nous sommes au 14 Rue d'Enghien, 33000 Bordeaux, à deux pas de la place Gambetta.
+        </p>
+        <div class="faq-extended">
+          <p>Accès et environnement :</p>
+          <ul>
+            <li>Centre historique, proche de la place Gambetta.</li>
+            <li>Ruelles piétonnes et terrasse arborée.</li>
+            <li>Bornes de recharge vélo et bancs publics à proximité.</li>
+          </ul>
+          <p>
+            Le cadre intérieur est cosy, avec des œuvres numériques aux murs et un espace de travail convivial.
+          </p>
+        </div>
+        <span class="faq-chevron"><i class="fas fa-chevron-down"></i></span>
+      </div>
+
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <h3>Quels sont vos horaires d'ouverture ?</h3>
+        <p>
+          Du mardi au samedi, de 9 h à 19 h ; dimanche de 10 h à 16 h.
+        </p>
+        <div class="faq-extended">
+          <p>Horaires spéciaux :</p>
+          <ul>
+            <li>Brunch samedi & dimanche, de 11 h à 14 h.</li>
+            <li>Rencontres artistiques le mardi soir (18 h–21 h).</li>
+            <li>Sessions nocturnes lors d’événements privés.</li>
+          </ul>
+          <p>
+            Les mises à jour (jours fériés, événements) sont publiées sur le site et les réseaux sociaux.
+          </p>
+        </div>
+        <span class="faq-chevron"><i class="fas fa-chevron-down"></i></span>
+      </div>
+
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <h3>Comment venir en transports en commun ?</h3>
+        <p>
+          La station de tram la plus proche est « Hôtel de Ville » (ligne A), à 3 minutes à pied.
+        </p>
+        <div class="faq-extended">
+          <p>Options disponibles :</p>
+          <ul>
+            <li>Tram A → Hôtel de Ville, puis 150 m à pied.</li>
+            <li>Bus 4, 5, 9 jusqu’à la place Gambetta (200 m).</li>
+            <li>Vélos en libre-service et taxis à la sortie de la gare Saint‑Jean.</li>
+          </ul>
+          <p>
+            Pour un trajet depuis la gare, prenez tram C → Quinconces, puis tram A jusqu’à Hôtel de Ville.
+          </p>
+        </div>
+        <span class="faq-chevron"><i class="fas fa-chevron-down"></i></span>
+      </div>
+
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <h3>Y a‑t‑il un parking à proximité ?</h3>
+        <p>
+          Oui, le parking public « Victor Hugo » est à 200 m, rue Vital Carles.
+        </p>
+        <div class="faq-extended">
+          <p>Services et tarifs :</p>
+          <ul>
+            <li>Places couvertes/non couvertes, tarif horaire dégressif.</li>
+            <li>Abonnements mensuels pour membres réguliers.</li>
+            <li>Bornes de recharge pour véhicules électriques 24 h/24.</li>
+          </ul>
+          <p>
+            Parking « Galeries » (400 m) propose des forfaits journée, et des zones bleues gratuites sont accessibles
+            avant 9 h chaque matin.
+          </p>
+        </div>
+        <span class="faq-chevron"><i class="fas fa-chevron-down"></i></span>
+      </div>
+
+    </div>
+
+    <h2>Concert K-pop</h2>
+    <div class="faq-container">
+
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <h3>Quels groupes K‑pop seront en tournée prochainement ?</h3>
+        <p>
+          Consultez notre page « Événements » pour voir la liste des groupes et les dates de leurs concerts à venir.
+        </p>
+        <div class="faq-extended">
+          <p>Groupes phares et calendrier :</p>
+          <ul>
+            <li>BTS, BLACKPINK, Stray Kids, aespa…</li>
+            <li>Calendrier mis à jour dès chaque annonce officielle.</li>
+            <li>Alertes personnalisées par email/SMS pour vos favoris.</li>
+          </ul>
+          <p>
+            Chaque fiche événement inclut :
+            plan de salle interactif, options VIP, préventes, conditions de remboursement
+            et accès aux contacts officiels.
+          </p>
+        </div>
+        <span class="faq-chevron"><i class="fas fa-chevron-down"></i></span>
+      </div>
+
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <h3>Comment puis-je acheter des billets ?</h3>
+        <p>
+          Les billets sont disponibles en ligne via notre plateforme partenaire : sélectionnez le concert,
+          choisissez vos places et réglez en quelques clics.
+        </p>
+        <div class="faq-extended">
+          <p>Étapes d’achat :</p>
+          <ul>
+            <li>Connectez-vous ou créez un compte.</li>
+            <li>Sélectionnez la catégorie de siège et le nombre de places.</li>
+            <li>Finalisez le paiement (carte bancaire, PayPal, Apple Pay, virement).</li>
+          </ul>
+          <p>
+            Vous recevrez un e‑ticket avec QR code. Pour toute question (double paiement, modification), notre support
+            est disponible 7j/7 par chat et téléphone.
+          </p>
+        </div>
+        <span class="faq-chevron"><i class="fas fa-chevron-down"></i></span>
+      </div>
+
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <h3>Où se déroulent les concerts ?</h3>
+        <p>
+          Les lieux varient selon l’artiste : stades, salles de spectacle et festivals.
+        </p>
+        <div class="faq-extended">
+          <p>Lieux et accessibilité :</p>
+          <ul>
+            <li>Arenas (AccorArena, Stade Pierre Mauroy), Zénith, Olympia.</li>
+            <li>Festivals open‑air (Rock en Seine, We Love Green).</li>
+            <li>Navettes spéciales et transports en commun recommandés.</li>
+          </ul>
+          <p>
+            Pour chaque lieu, consultez la carte interactive, les recommandations de transport et les consignes
+            de sécurité avant votre arrivée.
+          </p>
+        </div>
+        <span class="faq-chevron"><i class="fas fa-chevron-down"></i></span>
+      </div>
+
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <h3>Y a‑t‑il des restrictions d’âge ou de sécurité ?</h3>
+        <p>
+          Certains concerts sont interdits aux moins de 16 ans ou exigent une pièce d’identité. Vérifiez toujours
+          les conditions sur la page de chaque événement.
+        </p>
+        <div class="faq-extended">
+          <p>Consignes et restrictions :</p>
+          <ul>
+            <li>Pièce d’identité obligatoire (16+/18+ selon l’événement).</li>
+            <li>Contrôles de sécurité, bagages cabine limités, interdiction d’objets tranchants.</li>
+            <li>Zones PMR et services médicaux disponibles.</li>
+          </ul>
+          <p>
+            En urgence, suivez les procédures d’évacuation affichées et respectez les consignes du personnel pour un
+            événement sûr et agréable.
+          </p>
+        </div>
+        <span class="faq-chevron"><i class="fas fa-chevron-down"></i></span>
+      </div>
+
+    </div>
+
+    <h2>Questions sur les tournois</h2>
+    <div class="faq-container">
+
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <h3>Comment rejoindre un tournoi ?</h3>
+        <p>
+          Allez dans la section Événements, sélectionnez un tournoi puis cliquez sur « S'inscrire ». Vous devez être
+          connecté pour valider.
+        </p>
+        <div class="faq-extended">
+          <p>Étapes d’inscription :</p>
+          <ul>
+            <li>Vérifiez les critères d’éligibilité (âge, classement).</li>
+            <li>Remplissez les informations (équipe, niveau, disponibilités).</li>
+            <li>Recevez un rappel 24 h avant le début par SMS ou email.</li>
+          </ul>
+          <p>
+            Pendant le tournoi, utilisez le chat intégré pour organiser vos matchs. Un arbitre en ligne valide chaque
+            résultat et publie des statistiques détaillées.
+          </p>
+        </div>
+        <span class="faq-chevron"><i class="fas fa-chevron-down"></i></span>
+      </div>
+
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <h3>Comment suivre mes résultats ?</h3>
+        <p>
+          Vos matchs et scores sont disponibles dans votre profil, sous l'onglet « Mes Tournois ».
+        </p>
+        <div class="faq-extended">
+          <p>Suivi en temps réel :</p>
+          <ul>
+            <li>Notifications pop‑up après chaque rencontre.</li>
+            <li>Historique complet (victoires, défaites, durée moyenne).</li>
+            <li>Export CSV pour analyse et partage sur les réseaux sociaux.</li>
+          </ul>
+          <p>
+            Des badges numériques récompensent vos exploits (10 victoires, 50 matchs, etc.) et sont affichés sur votre
+            profil.
+          </p>
+        </div>
+        <span class="faq-chevron"><i class="fas fa-chevron-down"></i></span>
+      </div>
+
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <h3>Puis-je organiser mon propre tournoi ?</h3>
+        <p>
+          Oui, rendez-vous sur le tableau de bord organisateur et cliquez sur « Créer un tournoi » pour configurer
+          les détails.
+        </p>
+        <div class="faq-extended">
+          <p>Création de tournoi :</p>
+          <ul>
+            <li>Définissez nom, date, format (1v1, équipe) et frais de participation.</li>
+            <li>Personnalisez règles, catégories (débutant, expert) et récompenses.</li>
+            <li>Ajoutez un logo, une description et des visuels attractifs.</li>
+          </ul>
+          <p>
+            Suivez les inscriptions en temps réel, gérez les litiges et générez des rapports automatiques pour
+            garantir une compétition fluide.
+          </p>
+        </div>
+        <span class="faq-chevron"><i class="fas fa-chevron-down"></i></span>
+      </div>
+
+    </div>
+  </section>
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">
+        <a href="index.html">
+          <img src="img/simple.png" alt="Logo Chroma">
+        </a>
+      </div>
+      <div class="footer-links">
+        <h4>Liens utiles</h4>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="actualites.html">Actualités</a></li>
+          <li><a href="evenements.html">Événements</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="compte.html">Compte</a></li>
+          <li><a href="faq.html" class="active">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-newsletter">
+        <h4>Newsletter</h4>
+        <p>Abonnez-vous pour recevoir nos dernières actualités</p>
+        <form>
+          <input type="email" placeholder="Votre email">
+          <button type="submit" class="btn">S'ABONNER</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Chroma. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>

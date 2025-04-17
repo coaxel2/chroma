@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Actualités - Chroma</title>
+  <link href="css/style.css" rel="stylesheet" type="text/css" />
+  <link rel="icon" type="image/png" sizes="128x128" href="img/simple2.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      const params = new URLSearchParams(window.location.search);
+      const articleId = params.get('id');
+      const articlesData = {
+        'actu1': {
+          title: "Nouveau tournoi League of Legends",
+          image: "img/actu1.png",
+          content: `
+      <h2>Tournoi League of Legends</h2>
+      <p>
+        Le prochain tournoi LoL de Chroma arrive à grand pas, réunissant les meilleurs joueurs de toute la région.  
+        Sur trois jours intenses, chaque équipe de cinq s’affrontera dans un format « double élimination » pour maximiser la compétition.  
+        L’ambiance sera montée à son comble grâce à un studio mobile et une scène immersive installée dans nos locaux.  
+      </p><br>
+
+      <h3>Format et inscriptions</h3>
+      <ul>
+        <li>Équipes de 5 joueurs par formation, mixant amateurs et semi‑pros</li><br>
+        <li>Phase de groupes vendredi soir, bracket principal samedi et dimanche</li><br>
+        <li>Inscription gratuite via l'onglet « Inscription » sur notre site</li><br>
+        <li>Wildcards ouvertes pour les underdogs souhaitant prouver leur niveau</li><br>
+        <li>Utilisation du patch 13.8 avec modifications de règles spéciales dévoilées en ouverture</li><br>
+      </ul><br>
+
+      <h3>Diffusion et commentaires</h3>
+      <p>
+        Tous les matchs seront diffusés en direct sur Twitch et YouTube, avec deux casters professionnels.  
+        Angles multiples, replay instantané et ralentis sont prévus pour chaque moment clé.  
+        Un chat modéré permettra aux viewers d’interagir en direct, participer à des sondages et gagner des points de fidélité.  
+      </p><br>
+
+      <h3>Récompenses et bonus</h3>
+      <ul>
+        <li>Skins légendaires exclusifs aux champions du bracket principal</li><br>
+        <li>Goodies Chroma (t‑shirts, stickers, porte‑clés) pour les top 4</li><br>
+        <li>Badge « Meilleur Move » élu par le public lors de la finale</li><br>
+        <li>Pack de contenu numérique (émoticônes, overlays) pour tous les participants</li><br>
+        <li>Coupons de réduction chez nos sponsors pour les viewers et participants</li><br>
+      </ul><br>
+
+      <h3>Animations et communauté</h3>
+      <p>
+        En parallèle des matchs, des mini‑jeux, quiz et pronostics seront organisés pour engager la communauté.  
+        Des influenceurs e‑sport seront présents pour commenter off‑camera, animer les backstage et interviewer les joueurs.  
+        Un aftermovie professionnel retracera les meilleurs moments et coulisses de l’événement.  
+      </p><br>
+    `
+        },
+
+        'actu2': {
+          title: "Résultats du championnat Valorant",
+          image: "img/actu2.png",
+          content: `
+      <h2>Classement et avancées</h2>
+      <p>
+        Le championnat Valorant de Chroma s’est conclu cette semaine par des rencontres épiques et des retournements de situation spectaculaires.  
+        Plus de 16 000 spectateurs ont suivi la phase de groupes en direct, témoignant de l’engouement croissant pour la scène francophone.  
+        Les prochaines étapes s’annoncent cruciales pour décrocher une place en LAN.  
+      </p><br>
+
+      <h3>Équipes qualifiées</h3>
+      <ul>
+        <li>Nova Strike – invaincue en phase de groupes avec un score de 6‑0</li><br>
+        <li>Phantom Legion – spécialistes d’Ascent, victoire en overtime à trois reprises</li><br>
+        <li>Night Owls – révélation du tournoi, excellent 3‑0 sur Split</li><br>
+        <li>Crimson Blitz – stratégie axée sur les tactiques off‑angle</li><br>
+        <li>Iron Guard – défense solide sur Haven avec un ratio K/D de 1.9</li><br>
+      </ul><br>
+
+      <h3>MVP et statistiques</h3>
+      <p>
+        Hojoon remporte le titre de MVP grâce à un K/D ratio de 2.8 et plusieurs clutchs décisifs.  
+        Les statistiques montrent une explosion de l’utilisation des duellistes et des supports ces dernières semaines.  
+        Les analystes de Chroma publient un rapport détaillé sur les tendances méta et les compositions d’équipe gagnantes.  
+      </p><br>
+
+      <h3>À venir</h3>
+      <ul>
+        <li>Quarts de finale en BO5 programmés dans deux semaines</li><br>
+        <li>Finale en LAN dans une salle partenaire à Bordeaux</li><br>
+        <li>Tickets physiques déjà sold‑out; retransmission mondiale prévue</li><br>
+        <li>Showmatches entre casters et influenceurs avant chaque session</li><br>
+        <li>Accès privilégié pour abonnés premium avec backstage virtuel</li><br>
+      </ul><br>
+    `
+        },
+
+        'actu3': {
+          title: "Partenariat avec ESL",
+          image: "img/actu3.png",
+          content: `
+      <h2>Alliance stratégique</h2>
+      <p>
+        Chroma signe un partenariat majeur avec ESL France pour propulser l’e‑sport local sur la scène internationale.  
+        Ce partenariat combine expertise technique, production broadcast et rayonnement médiatique mondial.  
+        Des tournois labellisés ESL One et Pro League seront désormais organisés dans nos infrastructures.  
+      </p><br>
+
+      <h3>Avantages et opportunités</h3>
+      <ul>
+        <li>Accès direct aux qualifications ESL pour les meilleurs joueurs</li><br>
+        <li>Studios broadcast équipés de caméras 4K et réalité augmentée</li><br>
+        <li>Règles officielles et arbitrage certifié par ESL</li><br>
+        <li>Couverture multilingue via un réseau international de casters</li><br>
+        <li>Production d’événements hybrides (online + LAN) pour maximiser l’audience</li><br>
+      </ul><br>
+
+      <h3>Formation et innovation</h3>
+      <p>
+        Le programme ESL Campus sera intégré à Chroma pour développer l’e‑sport universitaire.  
+        Workshops, masterclasses et coachings certifiés ESL permettront aux jeunes talents de se former réellement.  
+        Un laboratoire R&D étudiera l’impact de l’IA sur l’analyse de performance et la gestion de tournois.  
+      </p><br>
+
+      <h3>Initiatives caritatives</h3>
+      <ul>
+        <li>Compétitions solidaires pour soutenir des associations</li><br>
+        <li>Reversement d’une partie des dotations pour des causes sociales</li><br>
+        <li>Programme de bénévolat e‑sport pour former les opérateurs de demain</li><br>
+      </ul><br>
+    `
+        },
+
+        'actu4': {
+          title: "Nouveau jeu à l'honneur : Rocket League",
+          image: "img/actu4.png",
+          content: `
+      <h2>Rocket League intègre Chroma</h2>
+      <p>
+        Football et voitures fusées : Rocket League débarque enfin chez Chroma, promettant des tournois spectaculaires.  
+        Joueurs de tous niveaux pourront concourir dans un environnement compétitif et convivial.  
+        Les premiers opens qualificatifs démarrent dès la semaine prochaine.  
+      </p><br>
+
+      <h3>Formats et compétitions</h3>
+      <ul>
+        <li>Opens 3v3 pour tous, sans frais d’inscription</li><br>
+        <li>Championnat par équipes avec phases de poules et playoffs</li><br>
+        <li>Événements spéciaux 1v1 et 2v2 pour varier les plaisirs</li><br>
+        <li>Tournois féminins et mixtes pour promouvoir l’inclusion</li><br>
+        <li>Challenges hebdomadaires avec récompenses en cosmétiques</li><br>
+      </ul><br>
+
+      <h3>Personnalisation et services</h3>
+      <p>
+        Customisez boosts, décorations de voiture et antennes.  
+        Profitez du replay slow motion, des analyses tactiques et d’un ladder classé pour gravir les échelons.  
+        Un système de mentorat jumèle débutants et pros pour accélérer l’apprentissage.  
+      </p><br>
+
+      <h3>Finales LAN et extras</h3>
+      <ul>
+        <li>Finales dans des arènes immersives avec podium et écrans géants</li><br>
+        <li>Aftermovie pro retraçant les meilleurs goals et célébrations</li><br>
+        <li>Interactions XR et réalité étendue pour spectateurs sur place</li><br>
+        <li>Tombolas de matériel gaming et tests de volants en live</li><br>
+        <li>Guides analytiques et breakdowns techniques publiés post‑événement</li><br>
+      </ul><br>
+    `
+        }
+      };
+      const article = articlesData[articleId] || {
+        title: "Article inconnu",
+        image: "img/placeholder.png",
+        content: "<p>Désolé, cet article n'existe pas.</p>"
+      };
+      document.getElementById('article-title').innerHTML = article.title;
+      document.getElementById('article-id').innerHTML = articleId || "inconnu";
+      document.querySelector('.article-content img').src = article.image;
+      document.getElementById('article-body').innerHTML = article.content;
+    });
+  </script>
+</head>
+
+<body class="dark-theme">
+  <header>
+    <div class="logo">
+      <a href="index.html">
+        <img src="img/simple.png" alt="Logo Chroma">
+      </a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="actualites.html" class="active">Actualités</a></li>
+        <li><a href="evenements.html">Événements</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="compte.html">Compte</a></li>
+      </ul>
+    </nav>
+    <div class="header-buttons">
+    </div>
+    <script>
+      window.addEventListener('scroll', function () {
+        const header = document.querySelector('header');
+        if (window.scrollY > 0) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      });
+    </script>
+  </header>
+
+  <section class="page-header">
+    <h1>Articles</h1>
+  </section>
+
+  <section class="article-content" style="padding: 80px 5%; text-align: left;">
+    <!-- Flèche de retour ajoutée -->
+    <a href="actualites.html" class="back-arrow"
+      style="display:inline-block; margin-bottom:20px; text-decoration:none; color:var(--primary-color);">
+      <i class="fas fa-arrow-left"></i> Retour aux actualités
+    </a>
+    <h2 id="article-title">Titre de l'article</h2>
+    <!-- Modification pour masquer l'identifiant de l'article -->
+    <p style="opacity: 0; z-index: -999999;">Identifiant article : <span id="article-id"></span></p>
+    <img src="img/placeholder.png" alt="Image article"
+      style="width:100%; max-height:400px; object-fit:cover; margin: 20px 0;">
+    <div id="article-body">
+      <p>Contenu détaillé de l'article. Ici, vous pourrez lire l'article en entier.</p>
+      <!-- ...contenu étendu... -->
+    </div>
+    <a href="actualites.html" class="btn btn-secondary btn-small">Retour aux actualités</a>
+  </section>
+
+  <footer>
+    <!-- ...existing footer code... -->
+    <div class="footer-content">
+      <!-- ...existing footer content... -->
+      <div class="footer-logo"><a href="index.html"><img src="img/simple.png" alt="Logo Chroma"></a></div>
+      <div class="footer-links">
+        <h4>Liens utiles</h4>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="actualites.html">Actualités</a></li>
+          <li><a href="evenements.html">Événements</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="compte.html">Compte</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-newsletter">
+        <h4>Newsletter</h4>
+        <p>Abonnez-vous pour recevoir nos dernières actualités</p>
+        <form>
+          <input type="email" placeholder="Votre email">
+          <button type="submit" class="btn">S'ABONNER</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Chroma. Tous droits réservés.</p>
+    </div>
+  </footer>
+  <script src="js/script.js"></script>
+</body>
+
+</html>

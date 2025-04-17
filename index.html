@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chroma</title>
+  <link href="css/style.css" rel="stylesheet" type="text/css" />
+  <link rel="icon" type="image/png" sizes="128x128" href="img/simple2.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="dark-theme">
+  <header>
+    <div class="logo">
+      <a href="index.html">
+        <img src="img/simple.png" alt="Logo Chroma">
+      </a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html" class="active">Accueil</a></li>
+        <li><a href="actualites.html">Actualités</a></li>
+        <li><a href="evenements.html">Événements</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="compte.html">Compte</a></li>
+      </ul>
+    </nav>
+    <div class="header-buttons">
+    </div>
+    <script>
+      window.addEventListener('scroll', function () {
+        const header = document.querySelector('header');
+        if (window.scrollY > 0) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      });
+    </script>
+  </header>
+
+  <section class="hero" id="accueil">
+    <div class="hero-content">
+      <h1>Bienvenue sur Chroma</h1>
+      <p>La communauté française pour les passionnés</p>
+      <a href="#actualites" class="btn btn-secondary">DÉCOUVRIR</a>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="feature">
+      <i class="fas fa-gamepad"></i>
+      <h3>Tournois</h3>
+      <p>Participez à nos tournois réguliers sur différents jeux</p>
+    </div>
+    <div class="feature">
+      <i class="fas fa-users"></i>
+      <h3>Communauté</h3>
+      <p>Rejoignez notre communauté active de joueurs</p>
+    </div>
+    <div class="feature">
+      <i class="fas fa-trophy"></i>
+      <h3>Compétitions</h3>
+      <p>Suivez les actualités des compétitions esportives</p>
+    </div>
+  </section>
+
+  <section class="news" id="actualites">
+    <h2>Actualités</h2>
+    <div class="news-container">
+      <div class="news-item">
+        <img src="img/actu1.png" alt="Actualité 1">
+        <h3>Nouveau tournoi League of Legends</h3>
+        <p>Inscrivez-vous à notre prochain tournoi qui aura lieu le weekend prochain.</p>
+        <a href="actualites.html" class="btn btn-small">Lire plus</a>
+      </div>
+      <div class="news-item">
+        <img src="img/actu2.png" alt="Actualité 2">
+        <h3>Résultats du championnat Valorant</h3>
+        <p>Découvrez les équipes qualifiées pour les playoff braquet.</p>
+        <a href="actualites.html" class="btn btn-small">Lire plus</a>
+      </div>
+      <div class="news-item">
+        <img src="img/actu3.png" alt="Actualité 3">
+        <h3>Partenariat avec ESL</h3>
+        <p>Spotify devient partenaire officiel des compétitions ESL en France.</p>
+        <a href="actualites.html" class="btn btn-small">Lire plus</a>
+      </div>
+    </div>
+    <div class="see-more">
+      <a href="actualites.html" class="btn btn-secondary">Voir toutes les actualités</a>
+    </div>
+  </section>
+
+  <section class="events" id="evenements">
+    <h2>Événements à venir</h2>
+    <div class="events-container">
+      <div class="event">
+        <div class="event-date">
+          <span class="day">15</span>
+          <span class="month">JUIN</span>
+        </div>
+        <div class="event-info">
+          <h3>Tournoi Call of Duty</h3>
+          <p>Bordeaux, France</p>
+          <a href="evenements.html" class="btn btn-small">En savoir plus</a>
+        </div>
+      </div>
+      <div class="event">
+        <div class="event-date">
+          <span class="day">22</span>
+          <span class="month">JUIN</span>
+        </div>
+        <div class="event-info">
+          <h3>Championnat Fortnite</h3>
+          <p>Bordeaux, France</p>
+          <a href="evenements.html" class="btn btn-small">En savoir plus</a>
+        </div>
+      </div>
+      <div class="event">
+        <div class="event-date">
+          <span class="day">30</span>
+          <span class="month">JUIN</span>
+        </div>
+        <div class="event-info">
+          <h3>Compétition FIFA 23</h3>
+          <p>Bordeaux, France</p>
+          <a href="evenements.html" class="btn btn-small">En savoir plus</a>
+        </div>
+      </div>
+    </div>
+    <div class="see-more">
+      <a href="evenements.html" class="btn btn-secondary">Voir tous les événements</a>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="cta-content">
+      <h2>Rejoignez notre Discord</h2>
+      <p>Participez à notre communauté et ne manquez aucun événement !</p>
+      <a href="#" class="btn btn-primary">REJOINDRE MAINTENANT</a>
+    </div>
+  </section>
+
+  <section class="partners">
+    <h2>Nos Partenaires</h2>
+    <div class="partners-logo">
+      <img src="img/ynov.png" alt="Partenaire 1">
+      <img src="img/hybe.png" alt="Partenaire 2">
+      <img src="img/t1.png" alt="Partenaire 3">
+      <img src="img/esl.png" alt="Partenaire 4">
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">
+        <a href="index.html">
+          <img src="img/simple.png" alt="Logo Chroma">
+        </a>
+      </div>
+      <div class="footer-links">
+        <h4>Liens utiles</h4>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="actualites.html">Actualités</a></li>
+          <li><a href="evenements.html">Événements</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="compte.html">Compte</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-newsletter">
+        <h4>Newsletter</h4>
+        <p>Abonnez-vous pour recevoir nos dernières actualités</p>
+        <form>
+          <input type="email" placeholder="Votre email">
+          <button type="submit" class="btn">S'ABONNER</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Chroma. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>
