@@ -189,6 +189,10 @@ nav ul li a.active:after {
   left: 0;
 }
 
+.burger-menu {
+  display: none;
+}
+
 /* ====================== Hero ====================== */
 .hero {
   background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.8)),
@@ -647,13 +651,15 @@ nav ul li a.active:after {
 
 .partners-logo {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* Espace entre les logos */
 }
 
 .partners-logo img {
-  max-width: 250px;
+  max-width: 100%;
+  width: 150px; /* Ajustez cette valeur selon votre design */
+  height: auto;
 }
 
 /* ====================== Account Section ====================== */
@@ -1105,8 +1111,18 @@ footer {
 
 @media (max-width: 768px) {
   header {
-    position: relative;
+    flex-direction: column;
+    padding: 10px 5%; /* Réduction du padding */
+  }
+
+  .logo img {
+    max-height: 40px; /* Réduction de la taille du logo */
+  }
+
+  header {
+    flex-direction: row;
     justify-content: space-between;
+    padding: 20px 5%;
   }
 
   .burger-menu {
@@ -1115,6 +1131,36 @@ footer {
     font-size: 1.5rem;
     color: var(--light-color);
     margin-left: 10px;
+    padding-bottom: 10px; /* Ajout de padding en bas */
+  }
+
+  nav ul {
+    position: fixed;
+    top: 80px; /* Augmenté pour afficher le menu un peu plus bas */
+    left: -100%;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--dark-color);
+    padding-top: 20px;
+    transition: left 0.3s ease;
+    flex-direction: column;
+    align-items: center;
+    z-index: 999;
+  }
+
+  nav ul.active {
+    left: 0;
+  }
+
+  nav ul li {
+    margin: 15px 0;
+    text-align: center;
+  }
+
+  header {
+    position: relative;
+    justify-content: space-between;
+    flex-direction: row;
   }
 
   nav ul {
@@ -1173,6 +1219,12 @@ footer {
   .footer-content > div {
     flex: 0 0 100%;
     margin-bottom: 40px;
+  }
+
+  /* Animation pour fermer le header */
+  header.closing {
+    transform: translateY(-100%);
+    transition: transform 0.5s ease;
   }
 }
 
