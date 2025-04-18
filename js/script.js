@@ -719,4 +719,186 @@ document.addEventListener("DOMContentLoaded", function () {
       header.classList.remove("scrolled");
     }
   });
+
+  // ===== Internationalisation =====
+  const translations = {
+    fr: {
+      // … vos clés existantes
+      feature1Title: "Tournois",
+      feature1Desc: "Participez à nos tournois réguliers sur différents jeux",
+      feature2Title: "Communauté",
+      feature2Desc: "Rejoignez notre communauté active de joueurs",
+      feature3Title: "Compétitions",
+      feature3Desc: "Suivez les actualités des compétitions esportives",
+
+      newsSectionTitle: "Actualités",
+      news1Title: "Nouveau tournoi League of Legends",
+      news1Desc:
+        "Inscrivez-vous à notre prochain tournoi qui aura lieu le weekend prochain.",
+      news1ReadMore: "Lire plus",
+      news2Title: "Résultats du championnat Valorant",
+      news2Desc: "Découvrez les équipes qualifiées pour les playoff braquet.",
+      news2ReadMore: "Lire plus",
+      news3Title: "Partenariat avec ESL",
+      news3Desc:
+        "Spotify devient partenaire officiel des compétitions ESL en France.",
+      news3ReadMore: "Lire plus",
+      newsSeeAll: "Voir toutes les actualités",
+
+      eventsSectionTitle: "Événements à venir",
+      event1Name: "Tournoi Call of Duty",
+      event1Location: "Bordeaux, France",
+      event1More: "En savoir plus",
+      event2Name: "Championnat Fortnite",
+      event2Location: "Bordeaux, France",
+      event2More: "En savoir plus",
+      event3Name: "Compétition FIFA 23",
+      event3Location: "Bordeaux, France",
+      event3More: "En savoir plus",
+      eventsSeeAll: "Voir tous les événements",
+
+      ctaTitle: "Rejoignez notre Discord",
+      ctaDesc: "Participez à notre communauté et ne manquez aucun événement !",
+      ctaButton: "REJOINDRE MAINTENANT",
+
+      partnersSectionTitle: "Nos Partenaires",
+
+      footerLinksTitle: "Liens utiles",
+      navFaq: "FAQ",
+
+      newsletterTitle: "Newsletter",
+      newsletterDesc: "Abonnez‑vous pour recevoir nos dernières actualités",
+      newsletterButton: "S'ABONNER",
+    },
+    en: {
+      navHome: "Home",
+      navAbout: "About",
+      navNews: "News",
+      navEvents: "Events",
+      navContact: "Contact",
+      navAccount: "Account",
+      navFaq: "FAQ",
+
+      heroTitle: "Welcome to Chroma",
+      heroSubtitle: "The community for passionate gamers",
+      heroCta: "DISCOVER",
+
+      feature1Title: "Tournaments",
+      feature1Desc: "Join our regular tournaments across various games",
+      feature2Title: "Community",
+      feature2Desc: "Become part of our active gaming community",
+      feature3Title: "Competitions",
+      feature3Desc: "Follow the latest esports competitions",
+
+      newsSectionTitle: "News",
+      news1Title: "New League of Legends Tournament",
+      news1Desc: "Sign up for our upcoming tournament happening next weekend.",
+      news1ReadMore: "Read more",
+      news2Title: "Valorant Championship Results",
+      news2Desc:
+        "Discover the qualified teams and current standings after intense matches.",
+      news2ReadMore: "Read more",
+      news3Title: "Partnership with ESL",
+      news3Desc:
+        "Chroma becomes the official partner of ESL competitions in France.",
+      news3ReadMore: "Read more",
+      newsSeeAll: "See all news",
+
+      eventsSectionTitle: "Upcoming Events",
+      event1Name: "Call of Duty Tournament",
+      event1Location: "Bordeaux, France",
+      event1More: "Learn more",
+      event2Name: "Fortnite Championship",
+      event2Location: "Bordeaux, France",
+      event2More: "Learn more",
+      event3Name: "FIFA 23 Competition",
+      event3Location: "Bordeaux, France",
+      event3More: "Learn more",
+      eventsSeeAll: "See all events",
+
+      ctaTitle: "Join our Discord",
+      ctaDesc: "Be part of our community and never miss an event!",
+      ctaButton: "JOIN NOW",
+
+      partnersSectionTitle: "Our Partners",
+
+      footerLinksTitle: "Useful Links",
+      newsletterTitle: "Newsletter",
+      newsletterDesc: "Subscribe to receive our latest updates",
+      newsletterButton: "SUBSCRIBE",
+    },
+    ko: {
+      navHome: "홈",
+      navAbout: "소개",
+      navNews: "뉴스",
+      navEvents: "이벤트",
+      navContact: "연락처",
+      navAccount: "계정",
+      navFaq: "자주 묻는 질문",
+
+      heroTitle: "크로마에 오신 것을 환영합니다",
+      heroSubtitle: "열정적인 게이머를 위한 커뮤니티",
+      heroCta: "발견하기",
+
+      feature1Title: "토너먼트",
+      feature1Desc: "다양한 게임에서 정기 토너먼트에 참여하세요",
+      feature2Title: "커뮤니티",
+      feature2Desc: "활발한 게이머 커뮤니티에 참여하세요",
+      feature3Title: "대회",
+      feature3Desc: "최신 e스포츠 대회를 확인하세요",
+
+      newsSectionTitle: "뉴스",
+      news1Title: "새로운 리그 오브 레전드 토너먼트",
+      news1Desc: "다음 주말에 열리는 토너먼트에 등록하세요.",
+      news1ReadMore: "더 보기",
+      news2Title: "발로란트 챔피언십 결과",
+      news2Desc: "치열한 경기 후 자격을 얻은 팀과 순위를 확인하세요.",
+      news2ReadMore: "더 보기",
+      news3Title: "ESL과의 파트너십",
+      news3Desc: "Chroma가 프랑스 ESL 대회의 공식 파트너가 됩니다.",
+      news3ReadMore: "더 보기",
+      newsSeeAll: "모든 뉴스 보기",
+
+      eventsSectionTitle: "다가오는 이벤트",
+      event1Name: "콜 오브 듀티 토너먼트",
+      event1Location: "보르도, 프랑스",
+      event1More: "자세히 보기",
+      event2Name: "포트나이트 챔피언십",
+      event2Location: "보르도, 프랑스",
+      event2More: "자세히 보기",
+      event3Name: "FIFA 23 대회",
+      event3Location: "보르도, 프랑스",
+      event3More: "자세히 보기",
+      eventsSeeAll: "모든 이벤트 보기",
+
+      ctaTitle: "우리 디스코드에 참여하세요",
+      ctaDesc: "커뮤니티에 참여하고 어떤 이벤트도 놓치지 마세요!",
+      ctaButton: "지금 참여하기",
+
+      partnersSectionTitle: "파트너사",
+
+      footerLinksTitle: "유용한 링크",
+      newsletterTitle: "뉴스레터",
+      newsletterDesc: "최신 소식을 받아보려면 구독하세요",
+      newsletterButton: "구독하기",
+    },
+  };
+
+  let currentLang = localStorage.getItem("lang") || "fr";
+
+  function applyTranslations(lang) {
+    document.querySelectorAll("[data-i18n]").forEach((el) => {
+      const key = el.getAttribute("data-i18n");
+      if (translations[lang] && translations[lang][key]) {
+        el.textContent = translations[lang][key];
+      }
+    });
+    localStorage.setItem("lang", lang);
+  }
+
+  document.querySelectorAll(".lang-switch").forEach((btn) => {
+    btn.addEventListener("click", () => applyTranslations(btn.dataset.lang));
+  });
+
+  applyTranslations(currentLang);
 });
