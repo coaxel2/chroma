@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>À-propos - Chroma</title>
+  <title>À propos - Chroma</title>
   <link href="css/style.css" rel="stylesheet" type="text/css" />
   <link rel="icon" type="image/png" sizes="128x128" href="img/simple2.png" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -16,14 +16,16 @@
       <a href="index.html">
         <img src="img/simple.png" alt="Logo Chroma">
       </a>
+
     </div>
     <nav>
       <ul>
         <li><a href="index.html">Accueil</a></li>
+        <li><a href="apropos.html" class="active">À propos</a></li>
         <li><a href="actualites.html">Actualités</a></li>
         <li><a href="evenements.html">Événements</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a href="compte.html" class="active">Compte</a></li>
+        <li><a href="compte.html">Compte</a></li>
       </ul>
     </nav>
     <div class="header-buttons">
@@ -41,61 +43,88 @@
   </header>
 
   <section class="page-header">
-    <h1>Mon Compte</h1>
+    <h1>À propos de Chroma</h1>
   </section>
 
-  <section class="account">
-    <div class="account-container">
-      <div class="account-tabs">
-        <div class="tab active" data-tab="login">Connexion</div>
-        <div class="tab" data-tab="register">Inscription</div>
-      </div>
+  <section class="about">
+    <div class="about-container">
+      <h2 class="about-intro">À propos de Chroma</h2>
+      <p>
+        Bienvenue chez <strong>Chroma</strong>, un cybercafé d’un nouveau genre où se rencontrent technologie,
+        divertissement et culture.
+        Plus qu’un simple café internet, Chroma est un lieu de vie hybride qui rassemble des passionnés de
+        <em>gaming</em>, de musique
+        et de pop culture dans une atmosphère chaleureuse. Notre vocation est de créer une <strong>communauté</strong>
+        unie où chacun
+        – gamer compétitif, fan de K-pop ou simple amateur de café – se sent chez soi, partage ses passions et fait de
+        nouvelles rencontres.
+      </p>
+      <p>
+        Imaginé comme un espace innovant et convivial, Chroma combine trois univers en un seul endroit.
+        Vous pourrez aussi bien y siroter un latte entre amis, participer à un tournoi de jeu vidéo endiablé
+        que chanter sur les derniers hits K-pop lors d’une soirée à thème. Ce mélange unique fait de Chroma
+        un lieu <strong>atypique</strong> et dynamique, porté par l’esprit de partage, la créativité et
+        l’enthousiasme de sa communauté.
+      </p>
 
-      <div class="tab-content active" id="login">
-        <form class="login-form">
-          <div class="form-group">
-            <label for="login-email">Email</label>
-            <input type="email" id="login-email" required>
-          </div>
-          <div class="form-group">
-            <label for="login-password">Mot de passe</label>
-            <input type="password" id="login-password" required>
-          </div>
-          <div class="form-group remember-me">
-            <input type="checkbox" id="remember">
-            <label for="remember">Se souvenir de moi</label>
-          </div>
-          <button type="submit" class="btn btn-primary btn-full">SE CONNECTER</button>
-          <p class="forgot-password"><a href="#">Mot de passe oublié ?</a></p>
-        </form>
-      </div>
+      <h2 class="about-cafe">
+        La partie
+        <img src="img/cafe3.png" alt="Café" style="height:1em; vertical-align: middle; margin: 0 0.2em;" />
+        Café – Convivialité & détente
+      </h2>
+      <img src="https://picsum.photos/seed/chroma-cafe/600/400" alt="Intérieur convivial du Café Chroma">
+      <p>
+        Le café de Chroma est l’endroit idéal pour <strong>se relaxer</strong> et recharger ses batteries.
+        Dans une ambiance cosy et colorée, installez-vous confortablement pour savourer un cappuccino,
+        un thé parfumé ou une boisson fraîche préparée par nos baristas. Que vous fassiez une pause entre
+        deux parties ou que vous veniez simplement profiter du wifi gratuit pour travailler ou étudier,
+        notre espace café vous accueille du matin jusqu’au soir dans une atmosphère détendue et amicale.
+      </p>
+      <ul>
+        <li><strong>Boissons & snacks variés :</strong> choix de cafés, thés, sodas et encas sucrés/salés.</li><br>
+        <li><strong>Espace cosy :</strong> fauteuils confortables, coins banquette et tables conviviales.</li><br>
+        <li><strong>Ambiance geek & K-pop :</strong> décor moderne, musique d’ambiance pop culture.</li><br>
+        <li><strong>Lieu de rencontres :</strong> idéal pour retrouver des amis ou rencontrer d’autres passionnés.</li>
+      </ul>
 
-      <div class="tab-content" id="register">
-        <form class="register-form">
-          <div class="form-group">
-            <label for="register-username">Nom d'utilisateur</label>
-            <input type="text" id="register-username" required>
-          </div>
-          <div class="form-group">
-            <label for="register-email">Email</label>
-            <input type="email" id="register-email" required>
-          </div>
-          <div class="form-group">
-            <label for="register-password">Mot de passe</label>
-            <input type="password" id="register-password" required>
-          </div>
-          <div class="form-group">
-            <label for="register-confirm">Confirmer le mot de passe</label>
-            <input type="password" id="register-confirm" required>
-          </div>
-          <div class="form-group terms">
-            <input type="checkbox" id="terms" required>
-            <label for="terms">J'accepte les <a href="#">conditions d'utilisation</a> et la <a href="#">politique de
-                confidentialité</a></label>
-          </div>
-          <button type="submit" class="btn btn-primary btn-full">S'INSCRIRE</button>
-        </form>
-      </div>
+      <h2 class="about-esport">La partie <img src="img/esport3.png" alt="E-sport"
+          style="height:1em; vertical-align: middle; margin: 0 0.2em;" /> E-sport – Compétition & adrénaline</h2>
+      <img src="https://picsum.photos/seed/chroma-esport/600/400" alt="Espace e-sport de Chroma">
+      <p>
+        Place à l’action dans notre espace <strong>E-sport</strong> ! Chroma met à votre disposition une véritable arène
+        de jeu équipée de PC ultra-performants, de consoles next-gen et d’écrans haute définition pour vivre vos
+        parties à 100%. Que vous soyez joueur occasionnel ou compétiteur acharné, vous trouverez chez nous de quoi
+        assouvir votre soif de jeu vidéo dans un cadre convivial.
+      </p>
+      <ul>
+        <li><strong>Équipement haut de gamme :</strong> PCs gaming, consoles, sièges ergonomiques.</li><br>
+        <li><strong>Tournois & compétitions :</strong> événements réguliers sur FPS, MOBA, sport, etc.</li><br>
+        <li><strong>Coaching & entraînement :</strong> sessions de coaching par des joueurs expérimentés.</li><br>
+        <li><strong>Retransmissions :</strong> diffusion de grandes compétitions e-sport internationales.</li>
+      </ul>
+
+      <h2 class="about-kpop">La partie <img src="img/kpop3.png" alt="K-pop"
+          style="height:1em; vertical-align: middle; margin: 0 0.2em;" />
+        K-pop – Passion & communauté</h2>
+      <img src="https://picsum.photos/seed/chroma-kpop/600/400" alt="Soirée K-pop à Chroma">
+      <p>
+        Plongez au cœur de la <strong>culture K-pop</strong> dans l’espace le plus fun de Chroma ! Cet univers est dédié
+        aux fans de musique et de pop culture asiatique, avec une programmation riche en événements pour célébrer
+        ensemble votre passion. Retrouvez les diffusions de concerts, des soirées à thème et un coin lounge décoré
+        aux couleurs des idols.
+      </p>
+      <ul>
+        <li><strong>Soirées thématiques :</strong> anniversaires d’artistes, dance challenges, quiz musicaux.</li><br>
+        <li><strong>Diffusion de concerts :</strong> retransmissions en direct ou en différé sur écrans géants.</li><br>
+        <li><strong>Espace fan-club :</strong> coin cosy pour échanger, partager news et photos.</li><br>
+        <li><strong>Culture asiatique :</strong> décor, playlists et snacks coréens pour une immersion totale.</li>
+      </ul>
+
+      <p>
+        En rassemblant café détente, e-sport et K-pop, <strong>Chroma</strong> est bien plus qu’un lieu : c’est une
+        expérience
+        unique à Bordeaux. Rejoignez-nous et vivez vos passions dans un espace convivial et passionnant !
+      </p>
     </div>
   </section>
 
@@ -103,19 +132,18 @@
     <h2>Questions fréquentes</h2>
     <div class="faq-container">
       <div class="faq-item">
-        <h3>Comment créer un compte ?</h3>
-        <p>Vous pouvez créer un compte en cliquant sur l'onglet "Inscription" ci-dessus et en remplissant le formulaire
-          avec vos informations.</p>
+        <h3>Que propose Chroma ?</h3>
+        <p>Chroma vous offre les dernières actualités, des événements exclusifs et une communauté engagée autour du
+          gaming.</p>
       </div>
       <div class="faq-item">
-        <h3>Comment modifier mon profil ?</h3>
-        <p>Une fois connecté, vous pourrez accéder à votre profil et le modifier en cliquant sur votre nom d'utilisateur
-          dans le menu.</p>
+        <h3>Comment rester informé ?</h3>
+        <p>Vous pouvez vous abonner à notre newsletter pour recevoir toutes les nouveautés directement dans votre boîte
+          mail.</p>
       </div>
       <div class="faq-item">
-        <h3>Comment participer aux tournois avec mon compte ?</h3>
-        <p>La création d'un compte vous permet de vous inscrire facilement aux tournois et de suivre votre progression.
-        </p>
+        <h3>Comment nous contacter ?</h3>
+        <p>Rendez-vous sur la page Contact pour envoyer vos questions ou suggestions.</p>
       </div>
     </div>
   </section>
@@ -131,6 +159,7 @@
         <h4>Liens utiles</h4>
         <ul>
           <li><a href="index.html">Accueil</a></li>
+          <li><a href="apropos.html">À propos</a></li>
           <li><a href="actualites.html">Actualités</a></li>
           <li><a href="evenements.html">Événements</a></li>
           <li><a href="contact.html">Contact</a></li>

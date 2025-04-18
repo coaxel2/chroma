@@ -871,6 +871,79 @@ nav ul li a.active:after {
   margin-bottom: 30px;
 }
 
+/* ====================== About Section ====================== */
+/* Icon inline dans les titres about */
+.about h2 img {
+  width: auto;
+  height: 1em;
+  vertical-align: middle;
+  margin: -0.2em 0.2em 0 0.2em;
+}
+.about {
+  padding: 80px 5%;
+  background-color: var(--grey-color);
+  color: var(--light-color);
+  text-align: left;
+}
+
+.about-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+}
+
+.about h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+}
+
+.about h3 {
+  font-size: 2rem;
+  margin-top: 40px;
+  margin-bottom: 15px;
+  color: var(--primary-color);
+}
+
+.about p {
+  margin-bottom: 20px;
+  line-height: 1.8;
+  color: var(--light-color);
+}
+
+.about img {
+  width: 100%;
+  border-radius: 8px;
+  margin: 15px 0;
+}
+
+.about ul {
+  list-style: disc outside;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.about ul li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+  color: var(--light-color);
+}
+
+.about-cafe {
+  color: #aa562f !important;
+}
+
+.about-esport {
+  color: #a8b2ff !important;
+}
+
+.about-kpop {
+  color: #fda15d !important;
+}
+
 /* ====================== FAQ Section ====================== */
 .faq {
   padding: 80px 5%;
@@ -1031,6 +1104,40 @@ footer {
 }
 
 @media (max-width: 768px) {
+  header {
+    position: relative;
+    justify-content: space-between;
+  }
+
+  .burger-menu {
+    display: block;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: var(--light-color);
+    margin-left: 10px;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: var(--dark-color);
+    padding: 10px 0;
+    z-index: 999;
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+    text-align: center;
+  }
+
   header {
     flex-direction: column;
     padding: 20px;
