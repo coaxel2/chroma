@@ -267,6 +267,13 @@ document.addEventListener("DOMContentLoaded", function () {
       let currentTheme = appliedTheme;
       document.getElementById("selected-theme").value = currentTheme;
 
+      // Ajout de la bordure sur l'option active au chargement
+      themeOptions.forEach((option) => {
+        if (option.getAttribute("data-theme") === currentTheme) {
+          option.style.border = "2px solid #fff";
+        }
+      });
+
       if (themeOptions.length > 0) {
         themeOptions.forEach((option) => {
           option.addEventListener("click", function () {
@@ -309,6 +316,7 @@ document.addEventListener("DOMContentLoaded", function () {
             document.body.classList.add(currentTheme + "-theme");
           });
         });
+
         const selectedThemeInput = document.getElementById("selected-theme");
         if (!selectedThemeInput.value) {
           const defaultOption = Array.from(themeOptions).find(
