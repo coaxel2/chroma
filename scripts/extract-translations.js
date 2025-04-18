@@ -1,63 +1,56 @@
+// scripts/extract-all-text.js
 const fs = require("fs");
 const path = require("path");
-const cheerio = require("cheerio");
 
-const projectDir = process.cwd();
-const outputDir = path.join(projectDir, "locales", "fr");
-const outputFile = path.join(outputDir, "translation.json");
+const files = [
+  "actualites.html",
+  "apropos.html",
+  "articles.html",
+  "compte.html",
+  "contact.html",
+  "evenements.html",
+  "faq.html",
+  "index.html",
+];
 
-let translations = {};
+// Helpers ----------------------------------------------------
+const stripTags = (html) =>
+  html
+    .replace(/<script[\s\S]*?<\/script>/gi, "") // supprime scripts
+    .replace(/<style[\s\S]*?<\/style>/gi, "") // supprime styles
+    .replace(/<!--[\s\S]*?-->/g, "") // supprime commentaires
+    .replace(/<\/?[^>]+>/g, " ") // enlève toutes balises
+    .replace(/\s+/g, " ") // espaces multiples -> simple
+    .trim();
 
-/**
- * Récupère récursivement tous les fichiers .html dans un répertoire.
- * @param {string} dir - Chemin du répertoire à scanner.
- * @returns {string[]} Tableau des chemins complets des fichiers .html.
- */
-function getHtmlFiles(dir) {
-  let results = [];
-  const list = fs.readdirSync(dir);
-  list.forEach((file) => {
-    const filePath = path.join(dir, file);
-    const stat = fs.statSync(filePath);
-    if (stat && stat.isDirectory() && file !== "node_modules") {
-      results = results.concat(getHtmlFiles(filePath));
-    } else if (stat && stat.isFile() && path.extname(file) === ".html") {
-      results.push(filePath);
-    }
-  });
-  return results;
-}
+let texts = new Set();
 
-const htmlFiles = getHtmlFiles(projectDir);
-htmlFiles.forEach((file) => {
-  const content = fs.readFileSync(file, "utf8");
-  const $ = cheerio.load(content);
-  $("[data-i18n]").each((_, element) => {
-    const key = $(element).attr("data-i18n");
-    const value = $(element).text().trim();
-    if (key && value && !translations.hasOwnProperty(key)) {
-      translations[key] = value;
-    }
+// Parcours des fichiers -------------------------------------
+files.forEach((file) => {
+  const filePath = path.join(__dirname, "..", file);
+  if (!fs.existsSync(filePath)) {
+    console.warn(`⛔  Fichier introuvable : ${file}`);
+    return;
+  }
+  const html = fs.readFileSync(filePath, "utf8");
+  const content = stripTags(html);
+  content.split(" ").forEach((word) => {
+    const t = word.trim();
+    if (t.length > 1) texts.add(t);
   });
 });
 
-// Tri alphabétique des clés
-const sortedKeys = Object.keys(translations).sort();
-let sortedTranslations = {};
-sortedKeys.forEach((key) => {
-  sortedTranslations[key] = translations[key];
-});
+// Tri et sortie ---------------------------------------------
+const sorted = Array.from(texts).sort((a, b) => a.localeCompare(b, "fr"));
+const outDir = path.join(__dirname, "..", "json");
+const outFile = path.join(outDir, "fr.json");
 
-// Créer le dossier de sortie s'il n'existe pas
-if (!fs.existsSync(outputDir)) {
-  fs.mkdirSync(outputDir, { recursive: true });
-}
+if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true });
+fs.writeFileSync(outFile, JSON.stringify(sorted, null, 2), "utf8");
 
-// Écrire l'objet JSON dans le fichier avec une indentation de 2 espaces
-fs.writeFileSync(
-  outputFile,
-  JSON.stringify(sortedTranslations, null, 2),
-  "utf8"
+console.log(
+  `✅  ${sorted.length} chaînes exportées vers ${path.relative(
+    process.cwd(),
+    outFile
+  )}`
 );
-
-console.log(`Traductions extraites et enregistrées dans ${outputFile}`);
