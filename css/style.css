@@ -1226,6 +1226,60 @@ footer {
     transform: translateY(-100%);
     transition: transform 0.5s ease;
   }
+
+  /* Réduction légère de la taille de base du texte */
+  body {
+    font-size: 0.85rem; /* Au lieu de 0.9rem */
+  }
+
+  /* Ajustement des titres et paragraphes dans la section Hero */
+  .hero h1 {
+    font-size: 1.9rem; /* Légère réduction */
+  }
+  .hero p {
+    font-size: 0.95rem; /* Légère réduction */
+  }
+
+  /* Réduction des titres des pages et autres sections */
+  .page-header h1,
+  .news h2,
+  .events h2,
+  .cta h2,
+  .partners h2,
+  .faq h2 {
+    font-size: 1.9rem; /* Au lieu de 2rem */
+  }
+
+  /* Ajustement des sous-titres dans les articles ou événements */
+  .news-item h3,
+  .event-info h3,
+  .feature h3 {
+    font-size: 1.1rem; /* Au lieu de 1.2rem */
+  }
+
+  /* Ajustement du reste des textes dans les événements */
+  .event-info p {
+    font-size: 0.8rem; /* Au lieu de 0.85rem */
+  }
+
+  /* Augmentation (ou réduction) de la taille des liens du header */
+  header nav ul li a {
+    font-size: 1.1rem; /* Au lieu de 1.2rem si besoin */
+  }
+
+  /* Ajustement pour l'icône burger */
+  header .burger-menu {
+    font-size: 1.7rem; /* Légère réduction */
+  }
+
+  /* Ajustement du bouton "désinscrire" */
+  .btn-desinscrire {
+    padding: 41px 14.5px !important; /* 18px en haut et en bas, 14.5px gauche/droite */
+    font-size: 0.95rem !important;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0px 8px 8px 0px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1257,6 +1311,7 @@ footer {
 
 .event-date {
   order: -1;
+  border-radius: 8px 0px 0px 8px;
 }
 
 .event-info {
@@ -1273,6 +1328,9 @@ footer {
   cursor: pointer !important;
   transition: background-color 0.3s ease;
   font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .profile-events {
