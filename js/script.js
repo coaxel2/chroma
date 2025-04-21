@@ -697,26 +697,16 @@ document.addEventListener("DOMContentLoaded", function () {
   const header = document.querySelector("header");
 
   if (burger) {
-    burger.addEventListener("click", function () {
+    burger.addEventListener("click", function (e) {
+      e.stopPropagation(); // éviter que le clic ne se propage
       navUl.classList.toggle("active");
     });
   }
 
-  window.addEventListener("scroll", function () {
-    // Si le menu est ouvert, le fermer avec animation
-    if (navUl.classList.contains("active")) {
-      navUl.classList.remove("active"); // ferme le menu
-      header.classList.add("closing"); // lance l'animation
-      setTimeout(() => {
-        header.classList.remove("closing");
-      }, 500); // retire la classe après la durée de l'animation (500ms ici)
-    }
-
-    // Modification de l'effet "scrolled" pour le header
-    if (window.scrollY > 0) {
-      header.classList.add("scrolled");
-    } else {
-      header.classList.remove("scrolled");
+  // Fermer le menu burger si l'utilisateur clique en dehors (sauf sur le menu de navigation)
+  document.addEventListener("click", function (e) {
+    if (navUl.classList.contains("active") && !e.target.closest("header nav")) {
+      navUl.classList.remove("active");
     }
   });
 });
