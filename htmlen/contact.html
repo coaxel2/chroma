@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr" class="i18n">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Chroma</title>
+  <link href="../css/style.css" rel="stylesheet" type="text/css" />
+  <link rel="icon" type="image/png" sizes="128x128" href="../img/simple2.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="dark-theme">
+  <header>
+    <div class="burger-menu">
+      <i class="fas fa-bars"></i>
+    </div>
+    <div class="logo">
+      <a href="index.html">
+        <img src="../img/simple.png" alt="Logo Chroma">
+      </a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="apropos.html">À propos</a></li>
+        <li><a href="actualites.html">Actualités</a></li>
+        <li><a href="evenements.html">Événements</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="compte.html">Compte</a></li>
+      </ul>
+    </nav>
+    <div class="language-selector">
+      <button class="lang-switch" data-lang="fr">FR</button>
+      <button class="lang-switch" data-lang="en">EN</button>
+      <button class="lang-switch" data-lang="ko">KO</button>
+    </div>
+    <div class="header-buttons">
+    </div>
+    <script>
+      window.addEventListener('scroll', function () {
+        const header = document.querySelector('header');
+        if (window.scrollY > 0) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      });
+    </script>
+  </header>
+
+  <section class="page-header">
+    <h1>Contactez-nous</h1>
+  </section>
+
+  <section class="contact full-contact">
+    <div class="contact-container">
+      <div class="contact-info">
+        <h3>Nos informations</h3>
+        <div class="info-item">
+          <i class="fas fa-envelope"></i>
+          <p>contact@chroma.fr</p>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-phone"></i>
+          <p>+33 1 23 45 67 89</p>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <p>14 Rue d'Enghien, 33000 Bordeaux, France</p>
+        </div>
+
+        <div class="contact-map">
+          <h3>Notre localisation</h3>
+          <iframe src="https://www.google.com/maps?q=14+Rue+d'Enghien,+33000+Bordeaux&output=embed" width="100%"
+            height="317" style="border:0;" allowfullscreen="" loading="lazy">
+          </iframe>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <h3>Envoyez-nous un message</h3>
+        <form>
+          <div class="form-group">
+            <label for="name">Nom</label>
+            <input type="text" id="name" placeholder="Votre nom">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Votre email">
+          </div>
+          <div class="form-group">
+            <label for="subject">Sujet</label>
+            <input type="text" id="subject" placeholder="Sujet de votre message">
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" placeholder="Votre message"></textarea>
+          </div>
+          <button type="submit" class="btn btn-secondary btn-full">ENVOYER</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modification de la section FAQ -->
+  <section class="faq" onclick="window.location.href='faq.html'" style="cursor: pointer;">
+    <h2>Oû nous trouver</h2>
+    <div class="faq-container">
+      <div class="faq-item">
+        <h3>Où se situe le Café Chroma ?</h3>
+        <p>Nous sommes au 14 Rue d'Enghien, 33000 Bordeaux, à deux pas de la place Gambetta.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Quels sont vos horaires d'ouverture ?</h3>
+        <p>Nous vous accueillons du mardi au samedi, de 9 h à 19 h, et le dimanche de 10 h à 16 h.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Comment venir en transports en commun ?</h3>
+        <p>La station de tram la plus proche est « Hôtel de Ville » (ligne A), à 3 minutes à pied.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Y a‑t‑il un parking à proximité ?</h3>
+        <p>Oui, le parking public « Victor Hugo » est à 200 m, rue Vital Carles.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">
+        <a href="index.html">
+          <img src="../img/simple.png" alt="Logo Chroma">
+        </a>
+      </div>
+      <div class="footer-links">
+        <h4>Liens utiles</h4>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="apropos.html">À propos</a></li>
+          <li><a href="actualites.html">Actualités</a></li>
+          <li><a href="evenements.html">Événements</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="compte.html">Compte</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-newsletter">
+        <h4>Newsletter</h4>
+        <p>Abonnez-vous pour recevoir nos dernières actualités</p>
+        <form>
+          <input type="email" placeholder="Votre email">
+          <button type="submit" class="btn">S'ABONNER</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Chroma. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <script src="../js/script.js"></script>
+</body>
+
+</html>

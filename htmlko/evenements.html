@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr" class="i18n">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Événements - Chroma</title>
+  <link href="../css/style.css" rel="stylesheet" type="text/css" />
+  <link rel="icon" type="image/png" sizes="128x128" href="../img/simple2.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="dark-theme">
+  <header>
+    <div class="burger-menu">
+      <i class="fas fa-bars"></i>
+    </div>
+    <div class="logo">
+      <a href="index.html">
+        <img src="../img/simple.png" alt="Logo Chroma">
+      </a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="apropos.html">À propos</a></li>
+        <li><a href="actualites.html">Actualités</a></li>
+        <li><a href="evenements.html" class="active">Événements</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="compte.html">Compte</a></li>
+      </ul>
+    </nav>
+    <div class="language-selector">
+      <button class="lang-switch" data-lang="fr">FR</button>
+      <button class="lang-switch" data-lang="en">EN</button>
+      <button class="lang-switch" data-lang="ko">KO</button>
+    </div>
+    <div class="header-buttons">
+    </div>
+    <script>
+      window.addEventListener('scroll', function () {
+        const header = document.querySelector('header');
+        if (window.scrollY > 0) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      });
+    </script>
+  </header>
+
+  <section class="page-header">
+    <h1>Événements à venir</h1>
+  </section>
+
+  <section class="events full-events">
+    <div class="events-container">
+      <div class="event-card">
+        <div class="event-image">
+          <img src="../img/event1.png" alt="Tournoi Call of Duty">
+          <div class="event-date">
+            <span class="day">15</span>
+            <span class="month">JUIN</span>
+          </div>
+        </div>
+        <div class="event-details">
+          <h3>Tournoi Call of Duty</h3>
+          <div class="event-meta">
+            <p><i class="fas fa-map-marker-alt"></i> Bordeaux, France</p>
+            <p><i class="fas fa-clock"></i> 14h00 - 20h00</p>
+          </div>
+          <p class="event-description">Participez à notre tournoi Call of Duty et affrontez les meilleurs joueurs de
+            France. Des récompenses exclusives seront offertes aux gagnants.</p>
+          <a href="#" class="btn btn-secondary">S'INSCRIRE</a>
+        </div>
+      </div>
+
+      <div class="event-card">
+        <div class="event-image">
+          <img src="../img/event2.png" alt="Championnat Fortnite">
+          <div class="event-date">
+            <span class="day">22</span>
+            <span class="month">JUIN</span>
+          </div>
+        </div>
+        <div class="event-details">
+          <h3>Championnat Fortnite</h3>
+          <div class="event-meta">
+            <p><i class="fas fa-map-marker-alt"></i> Bordeaux, France</p>
+            <p><i class="fas fa-clock"></i> 10h00 - 18h00</p>
+          </div>
+          <p class="event-description">Rejoignez notre championnat Fortnite et tentez de remporter le grand prix. Le
+            tournoi se déroulera sur deux jours avec des phases de qualifications.</p>
+          <a href="#" class="btn btn-secondary">S'INSCRIRE</a>
+        </div>
+      </div>
+
+      <div class="event-card">
+        <div class="event-image">
+          <img src="../img/event3.png" alt="Compétition FIFA 23">
+          <div class="event-date">
+            <span class="day">30</span>
+            <span class="month">JUIN</span>
+          </div>
+        </div>
+        <div class="event-details">
+          <h3>Compétition FIFA 23</h3>
+          <div class="event-meta">
+            <p><i class="fas fa-map-marker-alt"></i> Bordeaux, France</p>
+            <p><i class="fas fa-clock"></i> 13h00 - 19h00</p>
+          </div>
+          <p class="event-description">Montrez vos talents sur FIFA 23 lors de notre compétition officielle. Des matchs
+            en 1v1 vous attendent pour déterminer le meilleur joueur de France.</p>
+          <a href="#" class="btn btn-secondary">S'INSCRIRE</a>
+        </div>
+      </div>
+
+      <div class="event-card">
+        <div class="event-image">
+          <img src="../img/event4.png" alt="Tournoi Rocket League">
+          <div class="event-date">
+            <span class="day">10</span>
+            <span class="month">JUIL</span>
+          </div>
+        </div>
+        <div class="event-details">
+          <h3>Tournoi Rocket League</h3>
+          <div class="event-meta">
+            <p><i class="fas fa-map-marker-alt"></i> Bordeaux, France</p>
+            <p><i class="fas fa-clock"></i> 15h00 - 21h00</p>
+          </div>
+          <p class="event-description">Premier tournoi Rocket League organisé par Chroma. Formez votre équipe
+            de 3 joueurs et participez à cette compétition inédite.</p>
+          <a href="#" class="btn btn-secondary">S'INSCRIRE</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">
+        <a href="index.html">
+          <img src="../img/simple.png" alt="Logo Chroma">
+        </a>
+      </div>
+      <div class="footer-links">
+        <h4>Liens utiles</h4>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="apropos.html">À propos</a></li>
+          <li><a href="actualites.html">Actualités</a></li>
+          <li><a href="evenements.html">Événements</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="compte.html">Compte</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-newsletter">
+        <h4>Newsletter</h4>
+        <p>Abonnez-vous pour recevoir nos dernières actualités</p>
+        <form>
+          <input type="email" placeholder="Votre email">
+          <button type="submit" class="btn">S'ABONNER</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Chroma. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <script src="../js/script.js"></script>
+</body>
+
+</html>
