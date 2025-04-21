@@ -13,17 +13,17 @@ document.addEventListener("DOMContentLoaded", function () {
     const logoImg = document.querySelector(".logo img");
     if (logoImg) {
       logoImg.src =
-        theme === "simple" ? "img/simple.png" : "img/" + theme + ".png";
+        theme === "simple" ? "../img/simple.png" : "../img/" + theme + ".png";
     }
     const favIcon = document.querySelector('link[rel="icon"]');
     if (favIcon) {
       favIcon.href =
-        theme === "simple" ? "img/simple2.png" : "img/" + theme + "2.png";
+        theme === "simple" ? "../img/simple2.png" : "../img/" + theme + "2.png";
     }
     const footerLogoImg = document.querySelector("footer .footer-logo img");
     if (footerLogoImg) {
       footerLogoImg.src =
-        theme === "simple" ? "img/simple.png" : "img/" + theme + ".png";
+        theme === "simple" ? "../img/simple.png" : "../img/" + theme + ".png";
     }
   }
   updateLogoImages(appliedTheme);
