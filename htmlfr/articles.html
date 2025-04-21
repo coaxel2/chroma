@@ -5,8 +5,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Actualités - Chroma</title>
-  <link href="css/style.css" rel="stylesheet" type="text/css" />
-  <link rel="icon" type="image/png" sizes="128x128" href="img/simple2.png" />
+  <link href="../css/style.css" rel="stylesheet" type="text/css" />
+  <link rel="icon" type="image/png" sizes="128x128" href="../img/simple2.png" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script>
     window.addEventListener('DOMContentLoaded', function () {
@@ -15,7 +15,7 @@
       const articlesData = {
         'actu1': {
           title: "Nouveau tournoi League of Legends",
-          image: "img/actu1.png",
+          image: "../img/actu1.png",
           content: `
       <h2>Tournoi League of Legends</h2>
       <p>
@@ -60,7 +60,7 @@
 
         'actu2': {
           title: "Résultats du championnat Valorant",
-          image: "img/actu2.png",
+          image: "../img/actu2.png",
           content: `
       <h2>Classement et avancées</h2>
       <p>
@@ -98,7 +98,7 @@
 
         'actu3': {
           title: "Partenariat avec ESL",
-          image: "img/actu3.png",
+          image: "../img/actu3.png",
           content: `
       <h2>Alliance stratégique</h2>
       <p>
@@ -134,7 +134,7 @@
 
         'actu4': {
           title: "Nouveau jeu à l'honneur : Rocket League",
-          image: "img/actu4.png",
+          image: "../img/actu4.png",
           content: `
       <h2>Rocket League intègre Chroma</h2>
       <p>
@@ -172,7 +172,7 @@
       };
       const article = articlesData[articleId] || {
         title: "Article inconnu",
-        image: "img/placeholder.png",
+        image: "../img/placeholder.png",
         content: "<p>Désolé, cet article n'existe pas.</p>"
       };
       document.getElementById('article-title').innerHTML = article.title;
@@ -187,7 +187,7 @@
   <header>
     <div class="logo">
       <a href="index.html">
-        <img src="img/simple.png" alt="Logo Chroma">
+        <img src="../img/simple.png" alt="Logo Chroma">
       </a>
     </div>
     <nav>
@@ -233,7 +233,7 @@
     <h2 id="article-title">Titre de l'article</h2>
     <!-- Modification pour masquer l'identifiant de l'article -->
     <p style="opacity: 0; z-index: -999999;">Identifiant article : <span id="article-id"></span></p>
-    <img src="img/placeholder.png" alt="Image article"
+    <img src="../img/placeholder.png" alt="Image article"
       style="width:100%; max-height:400px; object-fit:cover; margin: 20px 0;">
     <div id="article-body">
       <p>Contenu détaillé de l'article. Ici, vous pourrez lire l'article en entier.</p>
@@ -246,7 +246,7 @@
     <!-- ...existing footer code... -->
     <div class="footer-content">
       <!-- ...existing footer content... -->
-      <div class="footer-logo"><a href="index.html"><img src="img/simple.png" alt="Logo Chroma"></a></div>
+      <div class="footer-logo"><a href="index.html"><img src="../img/simple.png" alt="Logo Chroma"></a></div>
       <div class="footer-links">
         <h4>Liens utiles</h4>
         <ul>
@@ -271,7 +271,7 @@
       <p>&copy; 2025 Chroma. Tous droits réservés.</p>
     </div>
   </footer>
-  <script src="js/script.js"></script>
+  <script src="../js/script.js"></script>
 </body>
 
 </html>
