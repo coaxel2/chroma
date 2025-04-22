@@ -1049,13 +1049,18 @@ nav ul li a.active:after {
   position: absolute;
   bottom: 10px;
   right: 10px;
-  color: #7c90a0;
+  color: var(--primary-color);
   font-size: 1rem;
   transition: transform 0.3s ease;
 }
 
 .faq-item.open .faq-chevron {
   transform: rotate(180deg);
+}
+
+.faq-btn {
+  margin-top: 20px;
+  color: var(--primary-color);
 }
 
 /* ====================== Footer ====================== */
