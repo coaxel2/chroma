@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="fr" class="i18n">
+<html lang="ko" class="i18n">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Compte - Chroma</title>
+  <title>계정 - Chroma</title>
   <link href="../css/style.css" rel="stylesheet" type="text/css" />
   <link rel="icon" type="image/png" sizes="128x128" href="../img/simple2.png" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -22,12 +22,12 @@
     </div>
     <nav>
       <ul>
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="apropos.html">À propos</a></li>
-        <li><a href="actualites.html">Actualités</a></li>
-        <li><a href="evenements.html">Événements</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="compte.html" class="active">Compte</a></li>
+        <li><a href="index.html">홈</a></li>
+        <li><a href="apropos.html">소개</a></li>
+        <li><a href="actualites.html">뉴스</a></li>
+        <li><a href="evenements.html">이벤트</a></li>
+        <li><a href="contact.html">연락처</a></li>
+        <li><a href="compte.html" class="active">계정</a></li>
       </ul>
     </nav>
     <div class="language-selector">
@@ -50,81 +50,77 @@
   </header>
 
   <section class="page-header">
-    <h1>Mon Compte</h1>
+    <h1>내 계정</h1>
   </section>
 
   <section class="account">
     <div class="account-container">
       <div class="account-tabs">
-        <div class="tab active" data-tab="login">Connexion</div>
-        <div class="tab" data-tab="register">Inscription</div>
+        <div class="tab active" data-tab="login">로그인</div>
+        <div class="tab" data-tab="register">회원가입</div>
       </div>
 
       <div class="tab-content active" id="login">
         <form class="login-form">
           <div class="form-group">
-            <label for="login-email">Email</label>
+            <label for="login-email">이메일</label>
             <input type="email" id="login-email" required>
           </div>
           <div class="form-group">
-            <label for="login-password">Mot de passe</label>
+            <label for="login-password">비밀번호</label>
             <input type="password" id="login-password" required>
           </div>
           <div class="form-group remember-me">
             <input type="checkbox" id="remember">
-            <label for="remember">Se souvenir de moi</label>
+            <label for="remember">로그인 상태 유지</label>
           </div>
-          <button type="submit" class="btn btn-primary btn-full">SE CONNECTER</button>
-          <p class="forgot-password"><a href="#">Mot de passe oublié ?</a></p>
+          <button type="submit" class="btn btn-primary btn-full">로그인</button>
+          <p class="forgot-password"><a href="#">비밀번호를 잊으셨나요?</a></p>
         </form>
       </div>
 
       <div class="tab-content" id="register">
         <form class="register-form">
           <div class="form-group">
-            <label for="register-username">Nom d'utilisateur</label>
+            <label for="register-username">사용자 이름</label>
             <input type="text" id="register-username" required>
           </div>
           <div class="form-group">
-            <label for="register-email">Email</label>
+            <label for="register-email">이메일</label>
             <input type="email" id="register-email" required>
           </div>
           <div class="form-group">
-            <label for="register-password">Mot de passe</label>
+            <label for="register-password">비밀번호</label>
             <input type="password" id="register-password" required>
           </div>
           <div class="form-group">
-            <label for="register-confirm">Confirmer le mot de passe</label>
+            <label for="register-confirm">비밀번호 확인</label>
             <input type="password" id="register-confirm" required>
           </div>
           <div class="form-group terms">
             <input type="checkbox" id="terms" required>
-            <label for="terms">J'accepte les <a href="#">conditions d'utilisation</a> et la <a href="#">politique de
-                confidentialité</a></label>
+            <label for="terms">이용 약관과 <a href="#">개인정보 보호정책</a>에 동의합니다</label>
           </div>
-          <button type="submit" class="btn btn-primary btn-full">S'INSCRIRE</button>
+          <button type="submit" class="btn btn-primary btn-full">회원가입</button>
         </form>
       </div>
     </div>
   </section>
 
   <section class="faq" onclick="window.location.href='faq.html'" style="cursor: pointer;">
-    <h2>Questions fréquentes</h2>
+    <h2>자주 묻는 질문</h2>
     <div class="faq-container">
       <div class="faq-item">
-        <h3>Comment créer un compte ?</h3>
-        <p>Vous pouvez créer un compte en cliquant sur l'onglet "Inscription" ci-dessus et en remplissant le formulaire
-          avec vos informations.</p>
+        <h3>어떻게 계정을 만들 수 있나요?</h3>
+        <p>위의 "회원가입" 탭을 클릭하여 정보를 입력하면 계정을 만들 수 있습니다.</p>
       </div>
       <div class="faq-item">
-        <h3>Comment modifier mon profil ?</h3>
-        <p>Une fois connecté, vous pourrez accéder à votre profil et le modifier en cliquant sur votre nom d'utilisateur
-          dans le menu.</p>
+        <h3>내 프로필을 어떻게 수정하나요?</h3>
+        <p>로그인 후 메뉴에서 사용자 이름을 클릭하여 프로필에 접근하고 수정할 수 있습니다.</p>
       </div>
       <div class="faq-item">
-        <h3>Comment participer aux tournois avec mon compte ?</h3>
-        <p>La création d'un compte vous permet de vous inscrire facilement aux tournois et de suivre votre progression.
-        </p>
+        <h3>내 계정으로 토너먼트에 어떻게 참여하나요?</h3>
+        <p>계정을 만들면 토너먼트에 쉽게 등록하고 진행 상황을 확인할 수 있습니다.</p>
       </div>
     </div>
   </section>
@@ -137,28 +133,28 @@
         </a>
       </div>
       <div class="footer-links">
-        <h4>Liens utiles</h4>
+        <h4>유용한 링크</h4>
         <ul>
-          <li><a href="index.html">Accueil</a></li>
-          <li><a href="apropos.html">À propos</a></li>
-          <li><a href="actualites.html">Actualités</a></li>
-          <li><a href="evenements.html">Événements</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="compte.html">Compte</a></li>
-          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="index.html">홈</a></li>
+          <li><a href="apropos.html">소개</a></li>
+          <li><a href="actualites.html">뉴스</a></li>
+          <li><a href="evenements.html">이벤트</a></li>
+          <li><a href="contact.html">연락처</a></li>
+          <li><a href="compte.html">계정</a></li>
+          <li><a href="faq.html">자주 묻는 질문</a></li>
         </ul>
       </div>
       <div class="footer-newsletter">
-        <h4>Newsletter</h4>
-        <p>Abonnez-vous pour recevoir nos dernières actualités</p>
+        <h4>뉴스레터</h4>
+        <p>최신 뉴스를 받으려면 구독하세요</p>
         <form>
-          <input type="email" placeholder="Votre email">
-          <button type="submit" class="btn">S'ABONNER</button>
+          <input type="email" placeholder="이메일 입력">
+          <button type="submit" class="btn">구독하기</button>
         </form>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2025 Chroma. Tous droits réservés.</p>
+      <p>&copy; 2025 Chroma. 모든 권리 보유.</p>
     </div>
   </footer>
 
