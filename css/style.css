@@ -63,6 +63,23 @@
   --tab-hover: #fda05da5;
 }
 
+/* ====================== Effet de Carte ====================== */
+.card {
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  padding: 1.5em;
+  width: 100%;
+  flex: 0 0 100%;
+  margin: 0 auto 40px;
+  transition: transform 0.3s ease;
+  color: var(--light-color);
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
 /* ====================== Reset et Global ====================== */
 * {
   margin: 0;
@@ -887,7 +904,7 @@ nav ul li a.active:after {
 }
 .about {
   padding: 80px 5%;
-  background-color: var(--grey-color);
+  background-color: var(--dark-color);
   color: var(--light-color);
   text-align: left;
 }
