@@ -29,76 +29,55 @@ document.addEventListener("DOMContentLoaded", function () {
   updateLogoImages(appliedTheme);
 
   let isLoggedIn = false;
+
   const lang = document.documentElement.lang || "fr";
+  const currentLang = document.documentElement.lang || "fr";
+  const storedUser = localStorage.getItem("loggedInUser");
+  if (storedUser) {
+    let user = JSON.parse(storedUser);
+    // Met à jour la langue du user sans supprimer ses informations
+    if (!user.lang || user.lang !== currentLang) {
+      user.lang = currentLang;
+      localStorage.setItem("loggedInUser", JSON.stringify(user));
+    }
+  }
+
   let defaultUser;
   if (lang === "en") {
+    // Laisser vide pour remplir manuellement vos informations
     defaultUser = {
-      username: "test_user",
-      email: "user@test.com",
-      firstname: "John",
-      lastname: "Doe",
-      games: ["Fortnite", "League of Legends", "Valorant"],
+      username: "",
+      email: "",
+      firstname: "",
+      lastname: "",
+      games: [],
       registeredEvents: [],
-      pastEvents: [
-        {
-          name: "Rocket League Tournament",
-          date: "15 MAY 2023",
-          location: "Bordeaux, France",
-          result: "2nd place",
-        },
-        {
-          name: "Counter-Strike Competition",
-          date: "3 APRIL 2023",
-          location: "Bordeaux, France",
-          result: "Participation",
-        },
-      ],
+      pastEvents: [],
+      lang: "en",
     };
   } else if (lang === "ko") {
+    // Laisser vide pour remplir manuellement vos informations
     defaultUser = {
-      username: "테스트_사용자",
-      email: "user@test.com",
-      firstname: "제인",
-      lastname: "듀퐁",
-      games: ["Fortnite", "League of Legends", "Valorant"],
+      username: "",
+      email: "",
+      firstname: "",
+      lastname: "",
+      games: [],
       registeredEvents: [],
-      pastEvents: [
-        {
-          name: "Rocket League 토너먼트",
-          date: "15 5월 2023",
-          location: "보르도, 프랑스",
-          result: "2등",
-        },
-        {
-          name: "Counter-Strike 대회",
-          date: "3 4월 2023",
-          location: "보르도, 프랑스",
-          result: "참석",
-        },
-      ],
+      pastEvents: [],
+      lang: "ko",
     };
   } else if (lang === "fr") {
+    // Laisser vide pour remplir manuellement vos informations
     defaultUser = {
-      username: "utilisateur_test",
-      email: "utilisateur@test.com",
-      firstname: "Jean",
-      lastname: "Dupont",
-      games: ["Fortnite", "League of Legends", "Valorant"],
+      username: "",
+      email: "",
+      firstname: "",
+      lastname: "",
+      games: [],
       registeredEvents: [],
-      pastEvents: [
-        {
-          name: "Tournoi Rocket League",
-          date: "15 MAI 2023",
-          location: "Bordeaux, France",
-          result: "2ème place",
-        },
-        {
-          name: "Compétition Counter-Strike",
-          date: "3 AVRIL 2023",
-          location: "Bordeaux, France",
-          result: "Participation",
-        },
-      ],
+      pastEvents: [],
+      lang: "fr",
     };
   }
   let loggedInUser = localStorage.getItem("loggedInUser")
@@ -204,6 +183,11 @@ document.addEventListener("DOMContentLoaded", function () {
         en: "K‑pop Theme",
         ko: "K‑pop 테마",
       },
+      upcomingEventsEmpty: {
+        fr: "Aucun événement à venir.",
+        en: "No upcoming events.",
+        ko: "예정된 이벤트 없음.",
+      },
       preferencesLabel: {
         fr: "Préférence",
         en: "Preferences",
@@ -269,6 +253,9 @@ document.addEventListener("DOMContentLoaded", function () {
         translations.themeEsport[lang] || translations.themeEsport.fr,
       themeCafe: translations.themeCafe[lang] || translations.themeCafe.fr,
       themeKpop: translations.themeKpop[lang] || translations.themeKpop.fr,
+      upcomingEventsEmpty:
+        translations.upcomingEventsEmpty[lang] ||
+        translations.upcomingEventsEmpty.fr,
       preferencesLabel:
         translations.preferencesLabel[lang] || translations.preferencesLabel.fr,
     };
@@ -411,13 +398,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     </div>
                 `;
       } else {
-        upcomingEventsHTML = `<p>${langTexts.myEventsUpcomingTitle} : ${
-          lang === "en"
-            ? "No upcoming events."
-            : lang === "ko"
-            ? "예정된 이벤트 없음."
-            : "Aucun événement à venir."
-        }</p>`;
+        upcomingEventsHTML = `<p>${langTexts.myEventsUpcomingTitle} : ${langTexts.upcomingEventsEmpty}</p>`;
       }
 
       let pastEventsHTML = "";
@@ -655,6 +636,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function updateMyEventsTab() {
     const langTexts = getAccountTranslations();
+    const lang = document.documentElement.lang || "fr";
+    const eventTranslations = {
+      rocketLeague: {
+        fr: "Tournoi Rocket League",
+        en: "Rocket League Tournament",
+        ko: "Rocket League 토너먼트",
+      },
+      counterStrike: {
+        fr: "Compétition Counter-Strike",
+        en: "Counter-Strike Competition",
+        ko: "Counter-Strike 대회",
+      },
+      // Ajoutez d'autres événements si nécessaire
+    };
     const myEventsContent = document.getElementById("my-events");
     if (!myEventsContent) return;
     let upcomingEventsHTML = "";
@@ -662,8 +657,12 @@ document.addEventListener("DOMContentLoaded", function () {
       upcomingEventsHTML = `
                 <div class="events-container profile-events">
                     ${loggedInUser.registeredEvents
-                      .map(
-                        (event) => `
+                      .map((event) => {
+                        const translatedName =
+                          event.key && eventTranslations[event.key]
+                            ? eventTranslations[event.key][lang] || event.name
+                            : event.name;
+                        return `
                             <div class="event-profile-card">
                                 <div class="event-date">
                                     <span class="day">${
@@ -674,22 +673,22 @@ document.addEventListener("DOMContentLoaded", function () {
                                     }</span>
                                 </div>
                                 <div class="event-info" style="flex: 1;">
-                                    <h4>${event.name}</h4>
+                                    <h4>${translatedName}</h4>
                                     <p><i class="fas fa-map-marker-alt"></i> ${
                                       event.location
                                     }</p>
                                 </div>
-                                <button class="btn-desinscrire" data-event-name="${
-                                  event.name
-                                }">${langTexts.unregisterButton}</button>
+                                <button class="btn-desinscrire" data-event-name="${translatedName}">${
+                          langTexts.unregisterButton
+                        }</button>
                             </div>
-                        `
-                      )
+                        `;
+                      })
                       .join("")}
                 </div>
             `;
     } else {
-      upcomingEventsHTML = `<p>${langTexts.myEventsUpcomingTitle} : Aucun événement à venir.</p>`;
+      upcomingEventsHTML = `<p>${langTexts.myEventsUpcomingTitle} : ${langTexts.upcomingEventsEmpty}</p>`;
     }
     let pastEventsHTML = "";
     if (loggedInUser.pastEvents.length > 0) {
@@ -872,6 +871,14 @@ document.addEventListener("DOMContentLoaded", function () {
             }`
           : "30 JUIN";
 
+        // Déterminer une clé d'événement si possible
+        let eventKey = "";
+        if (eventName.toLowerCase().includes("rocket")) {
+          eventKey = "rocketLeague";
+        } else if (eventName.toLowerCase().includes("counter")) {
+          eventKey = "counterStrike";
+        }
+
         if (!localStorage.getItem("userLoggedIn")) {
           localStorage.setItem("eventToRegister", eventName);
           localStorage.setItem("eventDate", eventDate);
@@ -879,12 +886,13 @@ document.addEventListener("DOMContentLoaded", function () {
           window.location.href = "compte.html#register";
         } else {
           const alreadyRegistered = loggedInUser.registeredEvents.some(
-            (ev) => ev.name === eventName
+            (ev) => ev.key === eventKey
           );
           if (alreadyRegistered) {
             alert(langTexts.alreadyRegisteredMessage(eventName));
           } else {
             loggedInUser.registeredEvents.push({
+              key: eventKey, // stocke la clé pour la traduction
               name: eventName,
               date: eventDate,
               location: eventLocation,
