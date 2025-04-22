@@ -650,7 +650,7 @@ nav ul li a.active:after {
 }
 
 .partners h2 {
-  margin-bottom: 40px;
+  margin-bottom: 75px;
   position: relative;
   display: inline-block;
   color: var(--light-color);
@@ -670,7 +670,23 @@ nav ul li a.active:after {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px; /* Espace entre les logos */
+  gap: 13em; /* Espace entre les logos */
+  position: relative;
+  z-index: 1;
+}
+
+/* Effet type "carte" derrière les logos des partenaires */
+.partners-logo::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: calc(100% + 40px);
+  height: calc(100% + 40px);
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  z-index: -1;
 }
 
 .partners-logo img {
