@@ -29,30 +29,250 @@ document.addEventListener("DOMContentLoaded", function () {
   updateLogoImages(appliedTheme);
 
   let isLoggedIn = false;
+  const lang = document.documentElement.lang || "fr";
+  let defaultUser;
+  if (lang === "en") {
+    defaultUser = {
+      username: "test_user",
+      email: "user@test.com",
+      firstname: "John",
+      lastname: "Doe",
+      games: ["Fortnite", "League of Legends", "Valorant"],
+      registeredEvents: [],
+      pastEvents: [
+        {
+          name: "Rocket League Tournament",
+          date: "15 MAY 2023",
+          location: "Bordeaux, France",
+          result: "2nd place",
+        },
+        {
+          name: "Counter-Strike Competition",
+          date: "3 APRIL 2023",
+          location: "Bordeaux, France",
+          result: "Participation",
+        },
+      ],
+    };
+  } else if (lang === "ko") {
+    defaultUser = {
+      username: "테스트_사용자",
+      email: "user@test.com",
+      firstname: "제인",
+      lastname: "듀퐁",
+      games: ["Fortnite", "League of Legends", "Valorant"],
+      registeredEvents: [],
+      pastEvents: [
+        {
+          name: "Rocket League 토너먼트",
+          date: "15 5월 2023",
+          location: "보르도, 프랑스",
+          result: "2등",
+        },
+        {
+          name: "Counter-Strike 대회",
+          date: "3 4월 2023",
+          location: "보르도, 프랑스",
+          result: "참석",
+        },
+      ],
+    };
+  } else if (lang === "fr") {
+    defaultUser = {
+      username: "utilisateur_test",
+      email: "utilisateur@test.com",
+      firstname: "Jean",
+      lastname: "Dupont",
+      games: ["Fortnite", "League of Legends", "Valorant"],
+      registeredEvents: [],
+      pastEvents: [
+        {
+          name: "Tournoi Rocket League",
+          date: "15 MAI 2023",
+          location: "Bordeaux, France",
+          result: "2ème place",
+        },
+        {
+          name: "Compétition Counter-Strike",
+          date: "3 AVRIL 2023",
+          location: "Bordeaux, France",
+          result: "Participation",
+        },
+      ],
+    };
+  }
   let loggedInUser = localStorage.getItem("loggedInUser")
     ? JSON.parse(localStorage.getItem("loggedInUser"))
-    : {
-        username: "utilisateur_test",
-        email: "utilisateur@test.com",
-        firstname: "Jean",
-        lastname: "Dupont",
-        games: ["Fortnite", "League of Legends", "Valorant"],
-        registeredEvents: [],
-        pastEvents: [
-          {
-            name: "Tournoi Rocket League",
-            date: "15 MAI 2023",
-            location: "Bordeaux, France",
-            result: "2ème place",
-          },
-          {
-            name: "Compétition Counter-Strike",
-            date: "3 AVRIL 2023",
-            location: "Bordeaux, France",
-            result: "Participation",
-          },
-        ],
-      };
+    : defaultUser;
+
+  function getAccountTranslations() {
+    const lang = document.documentElement.lang || "fr";
+    const translations = {
+      profileWelcome: { fr: "Bienvenue", en: "Welcome", ko: "환영합니다" },
+      usernameLabel: {
+        fr: "Nom d'utilisateur:",
+        en: "Username:",
+        ko: "사용자 이름:",
+      },
+      emailLabel: { fr: "Email:", en: "Email:", ko: "이메일:" },
+      favoriteGamesLabel: {
+        fr: "Jeux préférés:",
+        en: "Favorite Games:",
+        ko: "선호하는 게임:",
+      },
+      logoutButton: { fr: "SE DÉCONNECTER", en: "LOG OUT", ko: "로그아웃" },
+      editProfileTitleLabel: {
+        fr: "Nom d'utilisateur",
+        en: "Username",
+        ko: "사용자 이름",
+      },
+      editEmailLabel: { fr: "Email", en: "Email", ko: "이메일" },
+      editFirstnameLabel: { fr: "Prénom", en: "First Name", ko: "이름" },
+      editLastnameLabel: { fr: "Nom", en: "Last Name", ko: "성" },
+      editGamesLabel: {
+        fr: "Jeux préférés (séparés par des virgules)",
+        en: "Favorite Games (comma separated)",
+        ko: "선호하는 게임(콤마로 구분)",
+      },
+      saveChangesButton: {
+        fr: "ENREGISTRER LES MODIFICATIONS",
+        en: "SAVE CHANGES",
+        ko: "수정 사항 저장",
+      },
+      myEventsUpcomingTitle: {
+        fr: "Mes événements à venir",
+        en: "My Upcoming Events",
+        ko: "예정된 이벤트",
+      },
+      myEventsAvailableLink: {
+        fr: "VOIR LES ÉVÉNEMENTS DISPONIBLES",
+        en: "VIEW AVAILABLE EVENTS",
+        ko: "이벤트 보기",
+      },
+      myEventsPastTitle: {
+        fr: "Mes événements passés",
+        en: "My Past Events",
+        ko: "지난 이벤트",
+      },
+      unregisterButton: {
+        fr: "Désinscrire",
+        en: "Unregister",
+        ko: "취소",
+      },
+      updateSuccessMessage: {
+        fr: "Profil mis à jour avec succès !",
+        en: "Profile updated successfully!",
+        ko: "프로필이 성공적으로 업데이트되었습니다!",
+      },
+      eventUnregisterMessage: {
+        fr: (name) => `Vous avez été désinscrit de "${name}"`,
+        en: (name) => `You have been unregistered from "${name}"`,
+        ko: (name) => `"${name}" 이벤트에서 취소되었습니다`,
+      },
+      alreadyRegisteredMessage: {
+        fr: (name) => `Attention, tu es déjà inscrit à "${name}" !`,
+        en: (name) => `Warning, you are already registered for "${name}"!`,
+        ko: (name) => `"${name}" 이벤트에 이미 등록되어 있습니다!`,
+      },
+      eventRegisterSuccessMessage: {
+        fr: (name) => `Inscription à "${name}" réussie !`,
+        en: (name) => `Registration for "${name}" successful!`,
+        ko: (name) => `"${name}" 이벤트 등록이 완료되었습니다!`,
+      },
+      chooseTheme: {
+        fr: "Choisissez un thème",
+        en: "Choose a theme",
+        ko: "테마를 선택하세요",
+      },
+      themeSimple: {
+        fr: "Thème Simple",
+        en: "Simple Theme",
+        ko: "심플 테마",
+      },
+      themeEsport: {
+        fr: "Thème E‑sport",
+        en: "Esport Theme",
+        ko: "e스포츠 테마",
+      },
+      themeCafe: {
+        fr: "Thème Café",
+        en: "Cafe Theme",
+        ko: "카페 테마",
+      },
+      themeKpop: {
+        fr: "Thème K‑pop",
+        en: "K‑pop Theme",
+        ko: "K‑pop 테마",
+      },
+      preferencesLabel: {
+        fr: "Préférence",
+        en: "Preferences",
+        ko: "환경설정",
+      },
+    };
+    return {
+      lang,
+      profileWelcome:
+        translations.profileWelcome[lang] || translations.profileWelcome.fr,
+      usernameLabel:
+        translations.usernameLabel[lang] || translations.usernameLabel.fr,
+      emailLabel: translations.emailLabel[lang] || translations.emailLabel.fr,
+      favoriteGamesLabel:
+        translations.favoriteGamesLabel[lang] ||
+        translations.favoriteGamesLabel.fr,
+      logoutButton:
+        translations.logoutButton[lang] || translations.logoutButton.fr,
+      editProfileTitleLabel:
+        translations.editProfileTitleLabel[lang] ||
+        translations.editProfileTitleLabel.fr,
+      editEmailLabel:
+        translations.editEmailLabel[lang] || translations.editEmailLabel.fr,
+      editFirstnameLabel:
+        translations.editFirstnameLabel[lang] ||
+        translations.editFirstnameLabel.fr,
+      editLastnameLabel:
+        translations.editLastnameLabel[lang] ||
+        translations.editLastnameLabel.fr,
+      editGamesLabel:
+        translations.editGamesLabel[lang] || translations.editGamesLabel.fr,
+      saveChangesButton:
+        translations.saveChangesButton[lang] ||
+        translations.saveChangesButton.fr,
+      myEventsUpcomingTitle:
+        translations.myEventsUpcomingTitle[lang] ||
+        translations.myEventsUpcomingTitle.fr,
+      myEventsAvailableLink:
+        translations.myEventsAvailableLink[lang] ||
+        translations.myEventsAvailableLink.fr,
+      myEventsPastTitle:
+        translations.myEventsPastTitle[lang] ||
+        translations.myEventsPastTitle.fr,
+      unregisterButton:
+        translations.unregisterButton[lang] || translations.unregisterButton.fr,
+      updateSuccessMessage:
+        translations.updateSuccessMessage[lang] ||
+        translations.updateSuccessMessage.fr,
+      eventUnregisterMessage:
+        translations.eventUnregisterMessage[lang] ||
+        translations.eventUnregisterMessage.fr,
+      alreadyRegisteredMessage:
+        translations.alreadyRegisteredMessage[lang] ||
+        translations.alreadyRegisteredMessage.fr,
+      eventRegisterSuccessMessage:
+        translations.eventRegisterSuccessMessage[lang] ||
+        translations.eventRegisterSuccessMessage.fr,
+      chooseTheme:
+        translations.chooseTheme[lang] || translations.chooseTheme.fr,
+      themeSimple:
+        translations.themeSimple[lang] || translations.themeSimple.fr,
+      themeEsport:
+        translations.themeEsport[lang] || translations.themeEsport.fr,
+      themeCafe: translations.themeCafe[lang] || translations.themeCafe.fr,
+      themeKpop: translations.themeKpop[lang] || translations.themeKpop.fr,
+      preferencesLabel:
+        translations.preferencesLabel[lang] || translations.preferencesLabel.fr,
+    };
+  }
 
   function checkLoginState() {
     if (localStorage.getItem("userLoggedIn") === "true") {
@@ -62,20 +282,20 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function updateUIForLoggedUser() {
+    const langTexts = getAccountTranslations();
     const accountTabs = document.querySelector(".account-tabs");
     const loginContent = document.getElementById("login");
     const registerContent = document.getElementById("register");
 
     if (accountTabs && loginContent && registerContent) {
       accountTabs.innerHTML = `
-                <div class="tab active" data-tab="profile">Mon Profil</div>
-                <div class="tab" data-tab="edit-profile">Modifier Profil</div>
-                <div class="tab" data-tab="my-events">Mes Événements</div>
-                <div class="tab" data-tab="preferences">Préférence</div>
+                <div class="tab active" data-tab="profile">${langTexts.profileWelcome}, ${loggedInUser.firstname} ${loggedInUser.lastname}</div>
+                <div class="tab" data-tab="edit-profile">${langTexts.editProfileTitleLabel}</div>
+                <div class="tab" data-tab="my-events">${langTexts.myEventsUpcomingTitle}</div>
+                <div class="tab" data-tab="preferences">${langTexts.preferencesLabel}</div>
             `;
 
       const tabsContainer = document.querySelector(".tab-content").parentNode;
-
       document.querySelectorAll(".tab-content").forEach((el) => el.remove());
 
       const profileContent = document.createElement("div");
@@ -83,22 +303,24 @@ document.addEventListener("DOMContentLoaded", function () {
       profileContent.id = "profile";
       profileContent.innerHTML = `
                 <div class="profile-info">
-                    <h3>Bienvenue, ${loggedInUser.firstname} ${
-        loggedInUser.lastname
-      }</h3>
+                    <h3>${langTexts.profileWelcome}, ${
+        loggedInUser.firstname
+      } ${loggedInUser.lastname}</h3>
                     <div class="info-group">
-                        <label>Nom d'utilisateur:</label>
+                        <label>${langTexts.usernameLabel}</label>
                         <p>${loggedInUser.username}</p>
                     </div>
                     <div class="info-group">
-                        <label>Email:</label>
+                        <label>${langTexts.emailLabel}</label>
                         <p>${loggedInUser.email}</p>
                     </div>
                     <div class="info-group">
-                        <label>Jeux préférés:</label>
+                        <label>${langTexts.favoriteGamesLabel}</label>
                         <p>${loggedInUser.games.join(", ")}</p>
                     </div>
-                    <button id="logout-btn" class="btn btn-secondary btn-small margin-top">SE DÉCONNECTER</button>
+                    <button id="logout-btn" class="btn btn-secondary btn-small margin-top">${
+                      langTexts.logoutButton
+                    }</button>
                 </div>
             `;
 
@@ -108,36 +330,48 @@ document.addEventListener("DOMContentLoaded", function () {
       editProfileContent.innerHTML = `
                 <form class="edit-profile-form">
                     <div class="form-group">
-                        <label for="edit-username">Nom d'utilisateur</label>
+                        <label for="edit-username">${
+                          langTexts.editProfileTitleLabel
+                        }</label>
                         <input type="text" id="edit-username" value="${
                           loggedInUser.username
                         }" required>
                     </div>
                     <div class="form-group">
-                        <label for="edit-email">Email</label>
+                        <label for="edit-email">${
+                          langTexts.editEmailLabel
+                        }</label>
                         <input type="email" id="edit-email" value="${
                           loggedInUser.email
                         }" required>
                     </div>
                     <div class="form-group">
-                        <label for="edit-firstname">Prénom</label>
+                        <label for="edit-firstname">${
+                          langTexts.editFirstnameLabel
+                        }</label>
                         <input type="text" id="edit-firstname" value="${
                           loggedInUser.firstname
                         }" required>
                     </div>
                     <div class="form-group">
-                        <label for="edit-lastname">Nom</label>
+                        <label for="edit-lastname">${
+                          langTexts.editLastnameLabel
+                        }</label>
                         <input type="text" id="edit-lastname" value="${
                           loggedInUser.lastname
                         }" required>
                     </div>
                     <div class="form-group">
-                        <label for="edit-games">Jeux préférés (séparés par des virgules)</label>
+                        <label for="edit-games">${
+                          langTexts.editGamesLabel
+                        }</label>
                         <input type="text" id="edit-games" value="${loggedInUser.games.join(
                           ", "
                         )}" required>
                     </div>
-                    <button type="submit" class="btn btn-secondary btn-small margin-top">ENREGISTRER LES MODIFICATIONS</button>
+                    <button type="submit" class="btn btn-secondary btn-small margin-top">${
+                      langTexts.saveChangesButton
+                    }</button>
                 </form>
             `;
 
@@ -155,7 +389,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                 <div class="event-profile-card">
                                     <button class="btn-desinscrire" data-event-name="${
                                       event.name
-                                    }">Désinscrire</button>
+                                    }">${langTexts.unregisterButton}</button>
                                     <div class="event-date">
                                         <span class="day">${
                                           event.date.split(" ")[0]
@@ -177,7 +411,13 @@ document.addEventListener("DOMContentLoaded", function () {
                     </div>
                 `;
       } else {
-        upcomingEventsHTML = `<p>Vous n'êtes inscrit à aucun événement pour le moment.</p>`;
+        upcomingEventsHTML = `<p>${langTexts.myEventsUpcomingTitle} : ${
+          lang === "en"
+            ? "No upcoming events."
+            : lang === "ko"
+            ? "예정된 이벤트 없음."
+            : "Aucun événement à venir."
+        }</p>`;
       }
 
       let pastEventsHTML = "";
@@ -212,20 +452,19 @@ document.addEventListener("DOMContentLoaded", function () {
                     </div>
                 `;
       } else {
-        pastEventsHTML = `<p>Aucun événement passé à afficher.</p>`;
+        pastEventsHTML = `<p>${langTexts.myEventsPastTitle} : Aucun événement passé à afficher.</p>`;
       }
 
       myEventsContent.innerHTML = `
                 <div class="my-events-list">
-                    <h3>Mes événements à venir</h3>
+                    <h3>${langTexts.myEventsUpcomingTitle}</h3>
                     ${upcomingEventsHTML}
-                    <a href="evenements.html" class="btn btn-secondary btn-small margin-top">VOIR LES ÉVÉNEMENTS DISPONIBLES</a>
+                    <a href="evenements.html" class="btn btn-secondary btn-small margin-top">${langTexts.myEventsAvailableLink}</a>
                     
-                    <h3 class="margin-top-large">Mes événements passés</h3>
+                    <h3 class="margin-top-large">${langTexts.myEventsPastTitle}</h3>
                     ${pastEventsHTML}
                 </div>
             `;
-
       tabsContainer.appendChild(profileContent);
       tabsContainer.appendChild(editProfileContent);
       tabsContainer.appendChild(myEventsContent);
@@ -233,29 +472,32 @@ document.addEventListener("DOMContentLoaded", function () {
       const preferencesContent = document.createElement("div");
       preferencesContent.className = "tab-content";
       preferencesContent.id = "preferences";
+
       preferencesContent.innerHTML = `
                 <div class="preferences-container">
-                    <h3 style="margin-bottom:30px;">Choisissez un thème</h3>
+                    <h3 style="margin-bottom:30px;">${
+                      langTexts.chooseTheme || "Choisissez un thème"
+                    }</h3>
                     <form class="preferences-form">
                         <input type="hidden" id="selected-theme" name="theme" value="">
                         <div class="form-group" style="text-align:center;">
                             <div class="theme-option" data-theme="simple" style="color: #120D31; background-color: #7C90A0; display: block; width: 150px; height: 50px; line-height: 50px; margin: 0 auto; border-radius: 8px; cursor:pointer;">
-                                Thème Simple
+                                ${langTexts.themeSimple || "Thème Simple"}
                             </div>
                         </div>
                         <div class="form-group" style="text-align:center;">
                             <div class="theme-option" data-theme="esport" style="color: #7C90A0; background-color: #120D31; display: block; width: 150px; height: 50px; line-height: 50px; margin: 0 auto; border-radius: 8px; cursor:pointer;">
-                                Thème E‑sport
+                                ${langTexts.themeEsport || "Thème E‑sport"}
                             </div>
                         </div>
                         <div class="form-group" style="text-align:center;">
                             <div class="theme-option" data-theme="cafe" style="color: #B55119; background-color: #FDA15D; display: block; width: 150px; height: 50px; line-height: 50px; margin: 0 auto; border-radius: 8px; cursor:pointer;">
-                                Thème Café
+                                ${langTexts.themeCafe || "Thème Café"}
                             </div>
                         </div>
                         <div class="form-group" style="text-align:center;">
                             <div class="theme-option" data-theme="kpop" style="color: #FDA15D; background-color: #B55119; display: block; width: 150px; height: 50px; line-height: 50px; margin: 0 auto; border-radius: 8px; cursor:pointer;">
-                                Thème K‑pop
+                                ${langTexts.themeKpop || "Thème K‑pop"}
                             </div>
                         </div>
                     </form>
@@ -355,26 +597,28 @@ document.addEventListener("DOMContentLoaded", function () {
 
           localStorage.setItem("loggedInUser", JSON.stringify(loggedInUser));
 
-          alert("Profil mis à jour avec succès !");
+          alert(langTexts.updateSuccessMessage);
 
           document.querySelector("#profile").innerHTML = `
                     <div class="profile-info">
-                        <h3>Bienvenue, ${loggedInUser.firstname} ${
-            loggedInUser.lastname
-          }</h3>
+                        <h3>${langTexts.profileWelcome}, ${
+            loggedInUser.firstname
+          } ${loggedInUser.lastname}</h3>
                         <div class="info-group">
-                            <label>Nom d'utilisateur:</label>
+                            <label>${langTexts.usernameLabel}</label>
                             <p>${loggedInUser.username}</p>
                         </div>
                         <div class="info-group">
-                            <label>Email:</label>
+                            <label>${langTexts.emailLabel}</label>
                             <p>${loggedInUser.email}</p>
                         </div>
                         <div class="info-group">
-                            <label>Jeux préférés:</label>
+                            <label>${langTexts.favoriteGamesLabel}</label>
                             <p>${loggedInUser.games.join(", ")}</p>
                         </div>
-                        <button id="logout-btn" class="btn btn-secondary btn-small margin-top">SE DÉCONNECTER</button>
+                        <button id="logout-btn" class="btn btn-secondary btn-small margin-top">${
+                          langTexts.logoutButton
+                        }</button>
                     </div>
                     `;
 
@@ -410,6 +654,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function updateMyEventsTab() {
+    const langTexts = getAccountTranslations();
     const myEventsContent = document.getElementById("my-events");
     if (!myEventsContent) return;
     let upcomingEventsHTML = "";
@@ -436,7 +681,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                 </div>
                                 <button class="btn-desinscrire" data-event-name="${
                                   event.name
-                                }">Désinscrire</button>
+                                }">${langTexts.unregisterButton}</button>
                             </div>
                         `
                       )
@@ -444,7 +689,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 </div>
             `;
     } else {
-      upcomingEventsHTML = `<p>Vous n'êtes inscrit à aucun événement pour le moment.</p>`;
+      upcomingEventsHTML = `<p>${langTexts.myEventsUpcomingTitle} : Aucun événement à venir.</p>`;
     }
     let pastEventsHTML = "";
     if (loggedInUser.pastEvents.length > 0) {
@@ -478,14 +723,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 </div>
             `;
     } else {
-      pastEventsHTML = `<p>Aucun événement passé à afficher.</p>`;
+      pastEventsHTML = `<p>${langTexts.myEventsPastTitle} : Aucun événement passé à afficher.</p>`;
     }
     myEventsContent.innerHTML = `
             <div class="my-events-list">
-                <h3>Mes événements à venir</h3>
+                <h3>${langTexts.myEventsUpcomingTitle}</h3>
                 ${upcomingEventsHTML}
-                <a href="evenements.html" class="btn btn-secondary btn-small margin-top">VOIR LES ÉVÉNEMENTS DISPONIBLES</a>
-                <h3 class="margin-top-large">Mes événements passés</h3>
+                <a href="evenements.html" class="btn btn-secondary btn-small margin-top">${langTexts.myEventsAvailableLink}</a>
+                <h3 class="margin-top-large">${langTexts.myEventsPastTitle}</h3>
                 ${pastEventsHTML}
             </div>
         `;
@@ -501,7 +746,7 @@ document.addEventListener("DOMContentLoaded", function () {
             (ev) => ev.name !== eventName
           );
           localStorage.setItem("loggedInUser", JSON.stringify(loggedInUser));
-          alert(`Vous avez été désinscrit de "${eventName}"`);
+          alert(langTexts.eventUnregisterMessage(eventName));
           updateMyEventsTab();
         }
       });
@@ -612,6 +857,7 @@ document.addEventListener("DOMContentLoaded", function () {
     inscriptionBtns.forEach((btn) => {
       btn.addEventListener("click", function (e) {
         e.preventDefault();
+        const langTexts = getAccountTranslations();
         const eventDetails = this.closest(".event-details");
         const eventName = eventDetails.querySelector("h3").textContent;
         const eventLocation = eventDetails
@@ -636,7 +882,7 @@ document.addEventListener("DOMContentLoaded", function () {
             (ev) => ev.name === eventName
           );
           if (alreadyRegistered) {
-            alert(`Attention, tu es déjà inscrit à "${eventName}" !`);
+            alert(langTexts.alreadyRegisteredMessage(eventName));
           } else {
             loggedInUser.registeredEvents.push({
               name: eventName,
@@ -645,7 +891,7 @@ document.addEventListener("DOMContentLoaded", function () {
               team: "",
             });
             localStorage.setItem("loggedInUser", JSON.stringify(loggedInUser));
-            alert(`Inscription à "${eventName}" réussie !`);
+            alert(langTexts.eventRegisterSuccessMessage(eventName));
             updateMyEventsTab();
           }
         }
