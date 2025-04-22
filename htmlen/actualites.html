@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" class="i18n">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>News - Chroma</title>
+  <link href="../css/style.css" rel="stylesheet" type="text/css" />
+  <link rel="icon" type="image/png" sizes="128x128" href="../img/simple2.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="dark-theme">
+  <header>
+    <div class="burger-menu">
+      <i class="fas fa-bars"></i>
+    </div>
+    <div class="logo">
+      <a href="index.html">
+        <img src="../img/simple.png" alt="Logo Chroma">
+      </a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="apropos.html">About</a></li>
+        <li><a href="actualites.html" class="active">News</a></li>
+        <li><a href="evenement.html">Events</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="compte.html">Account</a></li>
+      </ul>
+    </nav>
+    <div class="language-selector">
+      <a href="../htmlfr/actualites.html" class="lang-switch" data-lang="fr">FR</a>
+      <a href="../htmlen/news.html" class="lang-switch" data-lang="en">EN</a>
+      <a href="../htmlko/actualites.html" class="lang-switch" data-lang="ko">KO</a>
+    </div>
+    <div class="header-buttons">
+    </div>
+    <script>
+      window.addEventListener('scroll', function () {
+        const header = document.querySelector('header');
+        if (window.scrollY > 0) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      });
+    </script>
+  </header>
+
+  <section class="page-header">
+    <h1>News</h1>
+  </section>
+
+  <section class="news full-news">
+    <div class="news-container">
+      <div class="news-item">
+        <img src="../img/actu1.png" alt="News 1">
+        <h3>New League of Legends Tournament</h3>
+        <p>Sign up for our next tournament taking place next weekend. The teams will consist of 5 players and the best
+          will win exclusive rewards.</p>
+        <p>The tournament will be held online and broadcast live on our Twitch channel. Don’t miss this chance to show
+          your talent and join the competitive League of Legends community.</p>
+        <a href="articles.html?id=actu1" class="btn btn-small">Read the article</a>
+      </div>
+
+      <div class="news-item">
+        <img src="../img/actu2.png" alt="News 2">
+        <h3>Valorant Championship Results</h3>
+        <p>Discover the teams qualified for the next phase of our championship. After intense matches and spectacular
+          moments, here are the current rankings.</p>
+        <p>The quarter-finals will take place next month, featuring matchups that promise to be exciting. Stay tuned for
+          more information on schedules and broadcasts.</p>
+        <a href="articles.html?id=actu2" class="btn btn-small">Read the article</a>
+      </div>
+
+      <div class="news-item">
+        <img src="../img/actu3.png" alt="News 3">
+        <h3>Partnership with ESL</h3>
+        <p>Chroma becomes the official partner for ESL competitions in France. This partnership will offer even more
+          opportunities to our community and elevate the level of esports competitions in France.</p>
+        <p>Exclusive events and qualifications for international tournaments will be announced soon. Join us to be among
+          the first to benefit!</p>
+        <a href="articles.html?id=actu3" class="btn btn-small">Read the article</a>
+      </div>
+
+      <div class="news-item">
+        <img src="../img/actu4.png" alt="News 4">
+        <h3>New Game Spotlight: Rocket League</h3>
+        <p>Chroma adds Rocket League to its list of competitive games. Regular tournaments will be organized for players
+          of all levels.</p>
+        <p>Whether you are a beginner or an expert, come share your passion for this unique game that blends football
+          and cars. The first tournaments are scheduled for next month!</p>
+        <a href="articles.html?id=actu4" class="btn btn-small">Read the article</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">
+        <a href="index.html">
+          <img src="../img/simple.png" alt="Logo Chroma">
+        </a>
+      </div>
+      <div class="footer-links">
+        <h4>Liens utiles</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="apropos.html">About</a></li>
+          <li><a href="actualites.html">News</a></li>
+          <li><a href="evenements.html">Events</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="compte.html">Account</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-newsletter">
+        <h4>Newsletter</h4>
+        <p>Subscribe to receive our latest news</p>
+        <form>
+          <input type="email" placeholder="Your email">
+          <button type="submit" class="btn">SUBSCRIBE</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Chroma. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../js/script.js"></script>
+</body>
+
+</html>
