@@ -155,8 +155,8 @@ document.addEventListener("DOMContentLoaded", function () {
       },
       eventRegisterSuccessMessage: {
         fr: (name) => `Inscription à "${name}" réussie !`,
-        en: (name) => `Registration for "${name}" successful!`,
-        ko: (name) => `"${name}" 이벤트 등록이 완료되었습니다!`,
+        en: `Registration for "${name}" successful!`,
+        ko: `"${name}" 이벤트 등록이 완료되었습니다!`,
       },
       chooseTheme: {
         fr: "Choisissez un thème",
@@ -961,6 +961,19 @@ document.addEventListener("DOMContentLoaded", function () {
   document.addEventListener("click", function (e) {
     if (navUl.classList.contains("active") && !e.target.closest("header nav")) {
       navUl.classList.remove("active");
+    }
+  });
+
+  // À placer une seule fois à la fin de DOMContentLoaded
+  const langSwitchAnchors = document.querySelectorAll(".lang-switch");
+  const pageLang = document.documentElement.lang || "fr";
+
+  // Définir la classe active initialement selon la langue de la page
+  langSwitchAnchors.forEach((anchor) => {
+    if (anchor.dataset.lang === pageLang) {
+      anchor.classList.add("active");
+    } else {
+      anchor.classList.remove("active");
     }
   });
 });
