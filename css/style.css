@@ -1140,6 +1140,105 @@ footer {
 }
 
 /* ====================== Responsive Design ====================== */
+/* Largeur <= 1024px */
+@media (max-width: 1024px) {
+  .news-item,
+  .event,
+  .feature {
+    flex: 0 0 48%;
+    margin-bottom: 20px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Largeur <= 768px */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 10px 5%;
+  }
+
+  .logo img {
+    max-height: 40px;
+  }
+
+  /* Navigation mobile */
+  nav ul {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 70px; /* Ajusté pour libérer l'espace du header */
+    left: 0;
+    width: 100%;
+    background-color: var(--dark-color);
+    padding: 20px 0;
+    z-index: 999;
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .burger-menu {
+    display: block;
+    font-size: 1.5rem;
+    color: var(--light-color);
+    margin-left: 10px;
+  }
+
+  .features,
+  .news-item,
+  .event,
+  .feature {
+    flex: 0 0 100%;
+  }
+
+  .faq-container {
+    padding: 0 10px;
+  }
+}
+
+/* Largeur <= 480px */
+@media (max-width: 480px) {
+  body {
+    font-size: 0.8rem;
+  }
+
+  header {
+    padding: 10px 2%;
+  }
+
+  nav ul li a {
+    font-size: 1rem;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .cta h2,
+  .page-header h1,
+  .news h2,
+  .events h2,
+  .partners h2,
+  .faq h2 {
+    font-size: 1.8rem;
+  }
+}
+
 @media (max-width: 1024px) {
   .news-item,
   .event {
